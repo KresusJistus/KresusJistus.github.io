@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabeller</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,900" rel="stylesheet">
+    <style>
+        html {
+            font-size: 16px;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: lightcyan;
+            font-weight: 300;
+            background-image: url("https://wallpaperscraft.com/image/star_art_sky_night_people_silhouette_98142_1920x1080.jpg");
+        }
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 12px;
+        }
+        img {
+            width: 100%;
+        }
+        @media (max-width: 1200px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 850px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            opacity: 0.5;
+        }
+        thead {
+            background-color: purple;
+            border-top: 4px solid deepskyblue;
+            border-bottom: 4px solid deeppink;
+            border-left: 4px solid black;
+            border-right: 4px solid black;
+            text-transform: uppercase;
+            font-size: .875rem;
+            color: #f9f9f9;
+        }
+        tbody{
+            background-color: yellow;
+            color: darkmagenta;
+        }
+        th, td {
+            text-align: left;
+            padding: .5rem .625rem;
+            border-right: 1px solid #ddd;
+        }
+        th:last-child, td:last-child {
+            border: none;
+        }
+        tr {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>Her ligger menyen e.l.</nav>
+</header>
+
+<main>
+    <article>
+        <h1>Hva slags side er dette?</h1>
+        <p>Dette er en enkel liten side med to tabeller. De er brukt som eksempler på hva man kan lage tabeller om, og
+        hvordan de kan se ut. Jeg har lekt meg med litt forskjellige farger og gjennomsiktighet. Innholdet er basert på
+        veldig typiske tema for slike oppgaver.</p>
+    </article>
+    <article>
+        <h1>Kjæledyr i familien</h1>
+        <table>
+            <thead>
+            <tr>
+                <th><h2>Navn</h2></th>
+                <th><h2>Art</h2></th>
+                <th><h2>Farge</h2></th>
+                <th><h2>År i familien</h2></th>
+                <th><h2>Status</h2></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Buddy</td>
+                <td>Hund</td>
+                <td>Brun og hvit</td>
+                <td>9</td>
+                <td>I god form</td>
+
+            </tr>
+            <tr>
+                <td>Evita</td>
+                <td>Katt</td>
+                <td>Svart og hvit</td>
+                <td>4</td>
+                <td>Feit og nå naboen sin</td>
+            </tr>
+            <tr>
+                <td>Påsan</td>
+                <td>Undulat</td>
+                <td>Blå og hvit</td>
+                <td>12</td>
+                <td>Avdød</td>
+            </tr>
+            <tr>
+                <td>Chaplin</td>
+                <td>Katt</td>
+                <td>Svart</td>
+                <td>2</td>
+                <td>Avdød</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+    <article>
+        <h1>Favorittmat</h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th><h2>#</h2></th>
+                <th><h2>Rett</h2></th>
+                <th><h2>Hovedingridienser</h2></th>
+                <th><h2>Opphav</h2></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Sushi</td>
+                <td>Fisk og ris</td>
+                <td>Japan</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pizza</td>
+                <td>Bakt bunn med tomatsaus og mer oppå</td>
+                <td>Italia</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Fajitas</td>
+                <td>Rykende varmt kjøtt og tortillas</td>
+                <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ostefondue</td>
+                <td>Ost</td>
+                <td>Sveits</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
