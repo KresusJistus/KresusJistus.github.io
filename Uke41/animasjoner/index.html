@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>007 Stickman</title>
+    <style>
+        body    {
+            overflow: hidden;
+            background-color: black;
+        }
+        @keyframes walk {
+
+            from {
+                background-position: 0 -500px;
+            }
+            to {
+                background-position: 0 -6500px;
+            }
+        }
+
+        @keyframes moveRight {
+
+            0% {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+
+            20% {
+                margin-left: 80px;
+                margin-top: 20px;
+            }
+
+            40% {
+                margin-left: 140px;
+                margin-top: 20px;
+            }
+
+            60% {
+                margin-left: 200px;
+                margin-top: 20px;
+            }
+
+            80% {
+                margin-left: 260px;
+                margin-top: 20px;
+            }
+
+            100% {margin-left: 260px;
+                margin-top: 20px;
+            }
+
+        }
+        .pang {
+            background-image: url("skytemannferdigani-01.png");
+            height: 500px;
+            width: 500px;
+            animation: walk 4.6s steps(12) forwards;
+        }
+        .right {
+            width: 500px;
+            height: 500px;
+            animation: moveRight 4.6s steps(24) forwards;
+        }
+        
+    </style>
+</head>
+<body>
+        <div class="right">
+                <div class="pang"></div>
+        </div>
+        <audio src="Realistic%20Gun%20Shot.mp3" autoplay></audio>
+        <audio src="007%20-%20James%20Bond%20-%20Theme.mp3" autoplay></audio>
+</body>
+</html>
