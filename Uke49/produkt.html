@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HorsePower kontakt</title>
+    <style>
+
+        body    {
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            margin: 0;
+            background-image: url("bakgrunnhped.png");
+            background-size: cover;
+
+        }
+
+        header  {
+            background-color: black;
+            filter: drop-shadow(0 5px 5px black);
+            color: white;
+            display: inline;
+            overflow: hidden;
+        }
+        header > p {
+            display: inline;
+        }
+
+        body {
+            background-color: white;
+        }
+        .active {
+            border-bottom: solid 2px black;
+        }
+        #cb {
+            display: none;
+        }
+        #burger {
+            display: flex;
+            width: 16px;
+            height: 16px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            margin-left: 8px;
+            margin-top: 4px;
+        }
+        #burger > div {
+            background-color: white;
+            height: 2px;
+            transition: 0.5s;
+        }
+        #menu {
+            width: 180px;
+            background-color: darkorange;
+            position: absolute;
+            top: 32px;
+            left: -300px;
+            min-height: calc(100vh - 156px);
+            transition: 0.8s;
+            max-height: 300px;
+            border: solid 3px darkorange;
+            border-radius: 2px;
+        }
+        #menu >a {
+            display: block;
+            text-decoration: none;
+            padding-left: 5px;
+            color: black;
+            padding-top: 5px;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+        #menu>a:hover {
+            color: blue;
+        }
+        #cb:checked ~ #menu{
+            left: 0;
+        }
+        #cb:checked ~ #burger > div:first-child {
+            transform: translateY(7px) rotate(45deg);
+        }
+        #cb:checked ~ #burger > div:nth-child(2) {
+            opacity: 0;
+        }
+        #cb:checked ~ #burger > div:last-child {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        header > label > div {
+            background-color: white;
+        }
+        #menuText {
+            position: absolute;
+            left: 30px;
+            top: 5px;
+            color: white;
+        }
+        /*FAQS*/
+        .faq_question {
+            margin: 5px;
+            padding: 0px 0px 5px 0px;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .faq_answer_container {
+            height: 0px;
+            overflow: hidden;
+            padding: 0px;
+        }
+        main {
+            overflow: hidden;
+            background-color: orangered;
+            max-width: 630px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 100%;}
+        h1 {
+            text-align: center;
+            font-family: sans-serif;
+        }
+        p {
+            margin-left: 5px;
+        }
+        h2 {margin-left: 5px
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <input type="checkbox" id="cb">
+    <label id="burger" for="cb">
+        <div></div>
+        <div></div>
+        <div></div>
+    </label>
+    <nav id="menu">
+        <a href="HorsePowerEnergy.html">Forsiden</a>
+        <a href="produkt">Om produktet</a>
+        <a href="Galleri.html">Galleri</a>
+        <a href="kontakt.html" class="active">Kontakt Oss!</a>
+
+    </nav>
+    <span id="menuText">Meny</span>
+</header>
+<main>
+    <h1>
+        Om vårt produkt
+    </h1>
+    <p>HorsePower Energy Drink er en blanding av spennende ingridienser, som vil gi en hver forbruker store mengder energi.
+        Den karakteristiske, søte og fruktige jordbærsmaken er umulig å ikke kjenne igjen, men en lett brennende sensasjon
+        fra det høye innholdet av kullsyre.</p>
+    <h2>Historien bak</h2>
+    <p>Idéen om vår energidrikk ble først satt ut i livet i en kjellerstue i Bærum i 2016, hvor alle 4 av dagens ledere eksperimenterte
+        med å blande energidrikker, for å skape den perfekte smaken. Etter utallige forsøk ble en nærmest perfekt smak
+        oppdaget, som senere ble forbedret kraftig ved å lage alt fra bunn. Så snart smaken var på plass, ble forskningen
+        satt i gang for å skape det størst mulige kicket. En kraftig blanding av koffein, guarana og kunstig testosteron
+        ga sørget for å gi det nødvendige sparket som vi lette etter.</p>
+
+    <p>Ved inngangen til året 2018 kom endelig HorsePower Energy Drink på markedet i Norge, med tittelen som landets
+        desidert sterkeste lovlige energidrikk.</p>
+
+    <h2>FAQ/Ofte stilte spørsmål</h2>
+    <p>Klikk på spørsmålene for å se svarene!</p>
+    <div>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+
+                $('.faq_question').click(function() {
+
+                    if ($(this).parent().is('.open')){
+                        $(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
+                        $(this).closest('.faq').removeClass('open');
+
+                    }else{
+                        var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
+                        $(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
+                        $(this).closest('.faq').addClass('open');
+                    }
+
+                });
+
+            });
+        </script>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Hvor får HorsePower Energy Drink all sin energi fra?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Vår energidrikk fremstilles på en unik måte ved å høykonsentrere store mengder
+                        koffein og taurin, med et ekstra kick fra kunstig fremstilt testosteron fra hest.</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Kommer det flere utgaver av energidrikken?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Hva som foregår i selskapet er stort sett topp hemmelig, men vi kan avsløre
+                    at en sukkerfri variant er under utvikling.</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Hvor mange bokser er trygt å drikke på én dag?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Det er ingen fasitsvar på hvor mye man kan drikke, det varierer sterkt fra
+                    person til person og kropp til kropp, men den trygge grensen for et gjennomsnittlig mennesker er
+                    2x 0,5L HorsePower om dagen.</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Hvorfor er prisen så høy?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Vår energidrikk er i gjennomsnitt 20% dyrere enn andre energidrikker. Det er fordi
+                    produksjonen er vesentlig mer avansert, med 80mg koffein per 100ml, da 30 eller 32mg er den vanlige mengden
+                    i energidrikk.</div>
+                </div>
+            </div>
+        </div>
+        <div class="faq_container">
+            <div class="faq">
+                <div class="faq_question">Er HorsePower åpne for sponsoravtaler?</div>
+                <div class="faq_answer_container">
+                    <div class="faq_answer">Selskapet er enda svært nytt, men sponsoravtaler er en del av fremtidsplanene.
+                    Det er slett ingen grunn til å ikke kunne konkurrere med de mer kjente merkene på det området.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

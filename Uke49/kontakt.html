@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HorsePower kontakt</title>
+    <style>
+
+        body    {
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            margin: 0;
+            background-image: url("bakgrunnhped.png");
+            background-size: cover;
+        }
+
+        header  {
+            background-color: black;
+            filter: drop-shadow(0 5px 5px black);
+            color: white;
+            display: inline;
+            overflow: hidden;
+        }
+        header > p {
+            display: inline;
+        }
+
+        body {
+            background-color: white;
+        }
+        .active {
+            border-bottom: solid 2px black;
+        }
+        #cb {
+            display: none;
+        }
+        #burger {
+            display: flex;
+            width: 16px;
+            height: 16px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            margin-left: 8px;
+            margin-top: 4px;
+        }
+        #burger > div {
+            background-color: white;
+            height: 2px;
+            transition: 0.5s;
+        }
+        #menu {
+            width: 180px;
+            background-color: darkorange;
+            position: absolute;
+            top: 32px;
+            left: -300px;
+            min-height: calc(100vh - 156px);
+            transition: 0.8s;
+            max-height: 300px;
+            border: solid 3px darkorange;
+            border-radius: 2px;
+        }
+        #menu >a {
+            display: block;
+            text-decoration: none;
+            padding-left: 5px;
+            color: black;
+            padding-top: 5px;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+        #menu>a:hover {
+            color: blue;
+        }
+        #cb:checked ~ #menu{
+            left: 0;
+        }
+        #cb:checked ~ #burger > div:first-child {
+            transform: translateY(7px) rotate(45deg);
+        }
+        #cb:checked ~ #burger > div:nth-child(2) {
+            opacity: 0;
+        }
+        #cb:checked ~ #burger > div:last-child {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        header > label > div {
+            background-color: white;
+        }
+        #menuText {
+            position: absolute;
+            left: 30px;
+            top: 5px;
+            color: white;
+        }
+        * {
+            font-family: sans-serif;
+        }
+        .faq_question {
+            margin: 0px;
+            padding: 0px 0px 5px 0px;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .faq_answer_container {
+            height: 0px;
+            overflow: hidden;
+            padding: 0px;
+        }
+        main {
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            max-width: 630px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 100%;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin-left: 5px;
+        }
+        main>div>article {
+            display: grid;
+            grid-auto-flow: column;
+        }
+        main>div>article>img {
+            max-width: 110px;
+        }
+        main>div>article {
+            max-width: 150px;
+            text-align: center;
+        }
+        body>main>div>p>a {
+            color: deepskyblue;
+            border-bottom: solid 2px deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <input type="checkbox" id="cb">
+    <label id="burger" for="cb">
+        <div></div>
+        <div></div>
+        <div></div>
+    </label>
+    <nav id="menu">
+        <a href="HorsePowerEnergy.html">Forsiden</a>
+        <a href="produkt">Om produktet</a>
+        <a href="Galleri.html">Galleri</a>
+        <a href="kontakt.html" class="active">Kontakt Oss!</a>
+
+    </nav>
+    <span id="menuText">Meny</span>
+</header>
+<main>
+    <div>
+        <h1>HorsePowers ledelse</h1>
+        <p>Utviklerene og ledelsen av HorsePower Energy Drink er svært opptatte av sine kunders meninger. Vårt produkt er
+        utviklet gjennom mange år med forskning, smakstester og konstruktive tilbakemeldinger. Vi tar gjerne i mot kritikk,
+        det er hva som hjelper oss best med å jobbe videre. Hvis du har noen spørsmål til oss, så ta først en titt på
+            FAQ-feltet vårt på <a href="produkt.html">produkt-siden</a>. Hvis du ikke finner hva du leter etter, så send
+        gjerne en mail til <i>kundeservice@horsepower.no</i>.</p>
+
+        <article>
+            <img src="megg-01.png">
+            <p>Gründer og medieansvarlig Mats Nylander</p>
+        </article>
+        <article>
+            <img src="2bear-01.png">
+            <p>Administrerende direktør Torbjørn Beining</p>
+        </article>
+        <article>
+            <img src="remfin-01.png">
+            <p>Økonomiansvarlig Henrik Schwanck Remmen</p>
+        </article>
+        <article>
+            <img src="sandy-01.png">
+            <p>Profesjonell smakstester Sander De Vibe Hammerstad</p>
+        </article>
+
+        <p>All direkte kontakt med ledelsen går gjennom medieansvarlig Mats Nylander, og kan nås via mail på
+            <i>mnyl@horsepower.no</i>, eller via telefon på +47 474 62 181.</p>
+
+        <h2>Vil du jobbe hos oss?</h2>
+        <p>Ønsker du å starte en karriere innen produksjon og utvikling av energidrikk? Vennligst send søknad og CV
+            til <i>arbeid@horsepower.no</i>.</p>
+
+    </div>
+</main>
+</body>
+</html>
