@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>XD Reviews</title>
+    <title>About XD</title>
 
     <style>
+
         body {
             margin: 0;
         }
@@ -36,12 +37,12 @@
             max-height: 5vh;
             position: relative;
         }
-
         header>a:hover {
             color: white;
             transition: 0.5s;
             transform: scale(1.2);
         }
+
         main {
             display: grid;
             grid-template-columns: auto 1fr auto;
@@ -63,61 +64,72 @@
         .active {
             color: yellow;
         }
-        main>section {
+        section {
+            background-color: #5e5e5e;
         }
-
+        section>article {
+            max-width: 30vw;
+        }
 
     </style>
 </head>
 <body>
-    <header>
-        <a class="active" href="#">Front Page</a>
-        <a href="HoF.html">Hall of Fame</a>
-        <a href="login.html">Upload a review</a>
-        <a href="about.html">About XD</a>
-    </header>
 
-    <main>
-        <aside>
-            <article>
-                <a href="#">
-                    <img src="skyrim.png">
-                </a>
-            </article>
-            <article>
-                <a href="#">
-                    <img src="witcher3.png">
-                </a>
-            </article>
-                <a href="#">
-                    <img src="thelastofus.png">
-                </a>
-        </aside>
+<header>
+    <a href="Utkast.html">Front Page</a>
+    <a href="HoF.html">Hall of Fame</a>
+    <a href="login.html">Upload a review</a>
+    <a class="active" href="#">About XD</a>
+</header>
 
-        <section>
-            <h1>Welcome to XD Reviews</h1>
-            <p>Latest reviews:</p>
+<main>
+    <aside>
+        <article>
+            <a href="#">
+                <img src="skyrim.png">
+            </a>
+        </article>
+        <article>
+            <a href="#">
+                <img src="witcher3.png">
+            </a>
+        </article>
+        <a href="#">
+            <img src="thelastofus.png">
+        </a>
+    </aside>
 
-        </section>
+    <section>
 
-        <aside>
-            <article>
-                <a href="#">
-                    <img src="kingdomc.png">
-                </a>
-            </article>
-            <article>
-                <a href="#">
-                    <img src="shadowofwar.png">
-                </a>
-            </article>
-            <article>
-                <a href="#">
-                    <img src="watchdogs2.png">
-                </a>
-            </article>
-        </aside>
+        <article>
+            <h1>
+                What is XD Reviews?
+            </h1>
 
-    </main>
+            <p>XD Reviews, or Xtreme Digital Reviews, is a user-based game critics website. Anyone can submit an informational
+            review about a game they have played, and rank it by their user experience and enjoyment.</p>
+        </article>
+    </section>
+
+    <aside>
+        <article>
+            <a href="#">
+                <img src="kingdomc.png">
+            </a>
+        </article>
+        <article>
+            <a href="#">
+                <img src="shadowofwar.png">
+            </a>
+        </article>
+        <article>
+            <a href="#">
+                <img src="watchdogs2.png">
+            </a>
+        </article>
+    </aside>
+
+</main>
+
 </body>
 </html>
