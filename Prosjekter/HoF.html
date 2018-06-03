@@ -75,7 +75,7 @@
 <header>
     <a href="Utkast.html">Front Page</a>
     <a class="active" href="#">Hall of Fame</a>
-    <a href="login.html">Upload a review</a>
+    <a href="upload.html">Upload a review</a>
     <a href="about.html">About XD</a>
 </header>
 
@@ -98,6 +98,7 @@
 
     <section>
 
+        <div id="divLatest"></div>
     </section>
 
     <aside>
@@ -119,6 +120,49 @@
     </aside>
 
 </main>
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCR5pMdVgzpUnivGVlp-jGxCLxszZGb9dA",
+        authDomain: "xdreviews-83470.firebaseapp.com",
+        databaseURL: "https://xdreviews-83470.firebaseio.com",
+        projectId: "xdreviews-83470",
+        storageBucket: "xdreviews-83470.appspot.com",
+        messagingSenderId: "236781573386"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script>
+    const db = firebase.database();
+    const anmeldelser = db.ref("anmeldelser");
+
+    const divLatest = document.getElementById("divLatest");
+
+    function visAnmeldelse(snap){
+
+        const anmeldelse = snap.val();
+        divLatest.innerHTML = `
+                <article>
+                    <h1>${anmeldelse.headline}</h1>
+                    <p>${anmeldelse.alias}</p>
+                    <img src="${anmeldelse.poster}">
+                    <p>${anmeldelse.review}</p>
+                    <p>${anmeldelse.score}</p>
+                </article>
+            ` + divLatest.innerHTML;
+
+    }
+
+
+    anmeldelser
+        .orderByChild("score")
+        .limitToFirst(10)
+        .on("child_added", visAnmeldelse);
+
+
+</script>
 
 </body>
 </html>

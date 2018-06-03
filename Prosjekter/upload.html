@@ -121,15 +121,17 @@
     </aside>
 
     <section>
-        <form>
+        <form id="skjema">
                 <p>Username:<p/>
-                <input type="text" id="alias"><br>
+                <input type="text" id="inpAlias"><br>
                 <p>Game poster:<p/>
-                <input type="file" id="poster" accept="image/*"><br>
+                <input type="file" id="inpPoster" accept="image/*"><br>
                 <p>Headline:</p>
-                <input type="text" id="headline"><br>
+                <input type="text" id="inpHeadline"><br>
+                <p>Score:</p>
+                <input type="number" min="0" max="100" id="inpScore"><br>
                 <p>Text:</p>
-                <textarea id="review_main" rows="13" cols="50">
+                <textarea id="inpReview" rows="13" cols="50">
 
                 </textarea><br>
                 <input type="submit" id="submit">
@@ -155,5 +157,64 @@
     </aside>
 
 </main>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCR5pMdVgzpUnivGVlp-jGxCLxszZGb9dA",
+        authDomain: "xdreviews-83470.firebaseapp.com",
+        databaseURL: "https://xdreviews-83470.firebaseio.com",
+        projectId: "xdreviews-83470",
+        storageBucket: "xdreviews-83470.appspot.com",
+        messagingSenderId: "236781573386"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script>
+    const db = firebase.database();
+    const storage = firebase.storage();
+    const anmeldelser = db.ref("anmeldelser");
+
+    const skjema = document.getElementById("skjema");
+    const inpAlias = document.getElementById("inpAlias");
+    const inpReview = document.getElementById("inpReview");
+    const inpHeadline = document.getElementById("inpHeadline");
+    const inpPoster = document.getElementById("inpPoster");
+    const inpScore = document.getElementById("inpScore");
+
+    function lagreData(bildesnap){
+        let url = bildesnap.downloadURL;
+
+        anmeldelser.push({
+            alias: inpAlias.value,
+            headline: inpHeadline.value,
+            review: inpReview.value,
+            score: Number(inpScore.value),
+            poster: url
+        });
+
+        skjema.reset();
+
+    }
+
+    function lastOppBilde(evt){
+        console.log("TESTE");
+        evt.preventDefault();
+        const fil = inpPoster.files[0];
+        const lager = storage.ref("postere/" + new Date());
+
+        lager.put(fil).then(lagreData);
+    }
+
+
+    skjema.onsubmit = lastOppBilde;
+
+
+</script>
+
+
 </body>
 </html>
