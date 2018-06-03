@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -9,38 +10,36 @@
     <title>XD Reviews</title>
 
     <style>
+
         body {
             margin: 0;
         }
-        
-        @media  {
-            
-        }
 
-        img {
-            max-width: 18vh;
-            max-height: 36vh;
+
+        aside img {
+            max-width: 100px;
+            height: auto;
         }
 
         header{
             background-color: black;
-            max-height: 15vh;
-            text-align: center;
+            min-height: 10vh;
+            max-height: 40vh;
+            width: auto;
+            background-size: cover;
             padding-top: 5vh;
             padding-bottom: 5vh;
             display: flex;
-            justify-content: center;
             border-bottom: solid 1vh darkorange;
         }
         header>a {
             color: royalblue;
             text-decoration: none;
-            font-size: 5vh;
-            display: inline-block;
-            padding-left: 6vw;
-            padding-right: 6vw;
+            font-size: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
             font-weight: 700;
-            max-height: 5vh;
+            max-height: 7vh;
             position: relative;
         }
 
@@ -93,7 +92,7 @@
         }
 
         #divLatest img {
-            width: 30vw;
+            width: 20vw;
         }
 
         .meta {
@@ -107,16 +106,19 @@
         #overskrift {
             text-align: center;
         }
+        #overskrift>p {
+            font-family: 'BioRhyme Expanded', serif;
+        }
 
 
     </style>
 </head>
 <body>
     <header>
-        <a class="active" href="#">Front Page</a>
-        <a href="HoF.html">Hall of Fame</a>
-        <a href="upload.html">Upload a review</a>
-        <a href="about.html">About XD</a>
+        <a class="active" href="#"><span>Front Page</span></a>
+        <a href="HoF.html"><span>Hall of Fame</span></a>
+        <a href="upload.html"><span>Upload a review</span></a>
+        <a href="about.html"><span>About XD</span></a>
     </header>
 
     <main>
