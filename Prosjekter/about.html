@@ -13,17 +13,21 @@
             padding: 0px 0px 5px 0px;
             display: inline-block;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 2000;
+            color: red;
+            -webkit-text-stroke: 0.2px white;
         }
 
         .faq_answer_container {
             height: 0px;
             overflow: hidden;
             padding: 0px;
+            margin-left: 10px;
         }
 
         body {
             margin: 0;
+            overflow: hidden;
         }
         section p {
             margin-left: 10px;
@@ -97,6 +101,11 @@
             font-family: sans-serif;
         }
 
+        #infodiv {
+            overflow-y: auto;
+            height: 78vh;
+        }
+
     </style>
 </head>
 <body>
@@ -127,7 +136,7 @@
 
     <section>
 
-        <article>
+        <div id="infodiv">
             <h1>
                 What is XD Reviews?
             </h1>
@@ -188,7 +197,7 @@
                 </div>
             </div>
             </div>
-        </article>
+        </div>
     </section>
 
     <aside>
