@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <title>XD Reviews</title>
 
     <style>
         body {
             margin: 0;
+        }
+        
+        @media  {
+            
         }
 
         img {
@@ -45,6 +52,10 @@
         main {
             display: grid;
             grid-template-columns: auto 1fr auto;
+        }
+
+        main>h1 {
+            text-align: center;
         }
 
         aside {
@@ -93,6 +104,9 @@
             color: white;
             padding: 8px;
         }
+        #overskrift {
+            text-align: center;
+        }
 
 
     </style>
@@ -123,8 +137,11 @@
         </aside>
 
         <section>
-            <h1>Welcome to XD Reviews</h1>
-            <p>Latest reviews:</p>
+
+            <div id="overskrift">
+                <h1>Welcome to XD Reviews</h1>
+                <p>Latest reviews:</p>
+            </div>
 
             <div id="divLatest"></div>
 
