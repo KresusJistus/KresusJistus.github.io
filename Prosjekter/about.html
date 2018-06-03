@@ -7,46 +7,73 @@
 
     <style>
 
+        /*FAQS*/
+        .faq_question {
+            margin: 5px;
+            padding: 0px 0px 5px 0px;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .faq_answer_container {
+            height: 0px;
+            overflow: hidden;
+            padding: 0px;
+        }
+
         body {
             margin: 0;
         }
+        section p {
+            margin-left: 10px;
+        }
+        section h1 {
+            margin-left: 10px;
+        }
+        section img {
+            margin-top: 0;
+            margin-left: 10px;
+        }
 
-        img {
-            max-width: 30vh;
-            max-height: 60vh;
+
+        aside img {
+            max-width: 100px;
+            height: auto;
         }
 
         header{
             background-color: black;
-            max-height: 15vh;
-            text-align: center;
+            min-height: 10vh;
+            max-height: 40vh;
+            width: auto;
+            background-size: cover;
             padding-top: 5vh;
             padding-bottom: 5vh;
             display: flex;
-            justify-content: center;
             border-bottom: solid 1vh darkorange;
         }
         header>a {
             color: royalblue;
             text-decoration: none;
-            font-size: 5vh;
-            display: inline-block;
-            padding-left: 6vw;
-            padding-right: 6vw;
+            font-size: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
             font-weight: 700;
-            max-height: 5vh;
+            max-height: 7vh;
             position: relative;
         }
+
         header>a:hover {
             color: white;
             transition: 0.5s;
             transform: scale(1.2);
         }
-
         main {
             display: grid;
             grid-template-columns: auto 1fr auto;
         }
+
 
         aside {
             background-color: peru;
@@ -66,9 +93,7 @@
         }
         section {
             background-color: #5e5e5e;
-        }
-        section>article {
-            max-width: 30vw;
+            font-family: sans-serif;
         }
 
     </style>
@@ -78,7 +103,7 @@
 <header>
     <a href="Utkast.html">Front Page</a>
     <a href="HoF.html">Hall of Fame</a>
-    <a href="login.html">Upload a review</a>
+    <a href="upload.html">Upload a review</a>
     <a class="active" href="#">About XD</a>
 </header>
 
@@ -106,8 +131,62 @@
                 What is XD Reviews?
             </h1>
 
+            <img src="xdreviews2.png">
+
             <p>XD Reviews, or Xtreme Digital Reviews, is a user-based game critics website. Anyone can submit an informational
             review about a game they have played, and rank it by their user experience and enjoyment.</p>
+
+            <h2>FAQ/Ofte stilte spørsmål</h2>
+            <p>Klikk på spørsmålene for å se svarene!</p>
+            <div>
+                <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+                <script>
+                    $(document).ready(function() {
+
+                        $('.faq_question').click(function() {
+
+                            if ($(this).parent().is('.open')){
+                                $(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
+                                $(this).closest('.faq').removeClass('open');
+
+                            }else{
+                                var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
+                                $(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
+                                $(this).closest('.faq').addClass('open');
+                            }
+
+                        });
+
+                    });
+                </script>
+
+            <div class="faq_container">
+                <div class="faq">
+                    <div class="faq_question">Who can upload reviews to XD reviews?</div>
+                    <div class="faq_answer_container">
+                        <div class="faq_answer">Anyone can upload a review to the website. It is completely user-based!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq_container">
+                <div class="faq">
+                    <div class="faq_question">What happens if someone uploads a fake or inappropriate review?</div>
+                    <div class="faq_answer_container">
+                        <div class="faq_answer">The website is regularly surveilled by our moderators, who will delete
+                            content that does not belong on the website.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq_container">
+                <div class="faq">
+                    <div class="faq_question">Do i have to give up private information to upload anything?</div>
+                    <div class="faq_answer_container">
+                        <div class="faq_answer">No, you will only have to use a preferred username to upload. You will remain anonymous.</div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </article>
     </section>
 
