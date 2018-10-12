@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <style>
+
+        h1 {
+            font-family: "Berlin Sans FB";
+            animation: gliInn 1.5s;
+        }
+
+        body {
+            background-color: lightgrey;
+            overflow: hidden;
+        }
+
+
+        @keyframes gliInn {
+            from {margin-left: -2000px}
+            to {margin-left: 0px}
+
+        }
+
+        #kontaktinfo {
+            font-size: 25px;
+        }
+
+        #divNummer {
+            animation: gliInn 1.8s;
+        }
+
+        #divAdresse {
+            animation: gliInn 2.1s;
+        }
+
+        #divPoststed {
+            animation: gliInn 2.4s;
+        }
+
+        #divPostkode {
+            animation: gliInn 2.7s;
+        }
+
+        #btnBekreft {
+            animation: gliInn 3s;
+        }
+
+        #btnVidere {
+            animation: gliInn 3.3s;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="navnOverskrift"></h1>
+
+<article id="kontaktinfo">
+
+    <div id="divNummer">
+        <p id="pTelefonnummer">Telefonnummer:</p>
+        <input type="number" id="inpNummer" placeholder="########">
+    </div>
+    <div id="divAdresse">
+        <p id="pAdresse">Adresse:</p>
+        <input type="text" id="inpAdresse" placeholder="Ola Nordmannsvei 10">
+    </div>
+    <div id="divPoststed">
+        <p id="pPoststed">Poststed:</p>
+        <input type="text" id="inpPoststed" placeholder="Andeby">
+    </div>
+    <div id="divPostkode">
+        <p id="pPostkode">Postkode:</p>
+        <input type="number" id="inpPostkode" placeholder="####">
+    </div>
+
+    <button id="btnBekreft">Bekreft</button>
+    <br>
+    <button id="btnVidere">Gå videre</button>
+    <br>
+</article>
+<script>
+    var fornavn = prompt("Skriv ditt fornavn");
+    var etternavn = prompt("Skriv ditt etternavn");
+
+    var navnOverskrift = document.getElementById("navnOverskrift");
+
+    navnOverskrift.innerHTML = "Hei, " + fornavn + " " + etternavn + "!";
+
+    var inpNummer = document.getElementById("inpNummer");
+    var pTelefonnummer = document.getElementById("pTelefonnummer");
+    var inpAdresse = document.getElementById("inpAdresse");
+    var pAdresse = document.getElementById("pAdresse");
+    var inpPoststed = document.getElementById("inpPoststed");
+    var pPoststed = document.getElementById("pPoststed");
+    var inpPostkode = document.getElementById("inpPostkode");
+    var pPostkode = document.getElementById("pPostkode");
+
+    var btnBekreft = document.getElementById("btnBekreft");
+    var btnVidere = document.getElementById("btnVidere");
+
+    btnBekreft.onclick = function () {
+        pTelefonnummer.innerHTML = "Telefonnummer: " + "+47" + inpNummer.value;
+        pAdresse.innerHTML = "Adresse: " + inpAdresse.value;
+        pPoststed.innerHTML = "Poststed: " + inpPoststed.value;
+        pPostkode.innerHTML = "Postkode: " + inpPostkode.value;
+    };
+
+    btnVidere.onclick = function () {
+        document.write(
+            "Telefonnummer: +47" + inpNummer.value + "<br>" +
+            "Adresse: " + inpAdresse.value + "<br>" +
+            "Poststed: " + inpPoststed.value + "<br>"+
+            "Postkode: " + inpPostkode.value+ "<br>" +
+            "Takk for at du har registrert deg!"
+        );
+        document.body.style.fontFamily = "sans-serif";
+        document.body.style.fontSize = "20px";
+        document.body.style.lineHeight = "23px";
+    }
+
+</script>
+
+
+</body>
+</html>
