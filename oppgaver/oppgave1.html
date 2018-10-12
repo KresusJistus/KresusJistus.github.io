@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prøv selv: oppgave 1 og 2</title>
+</head>
+<body>
+
+<p>Hei på deg</p>
+
+<button id="btnAktiver">Aktiver funksjon</button>
+
+<script>
+
+    var btnAktiver = document.getElementById("btnAktiver");
+
+
+
+    skrivNavn();
+    skrivNavn();
+    skrivNavn();
+
+
+
+    function skrivNavn() {
+        document.write("<br>Mats <br>");
+    }
+
+    btnAktiver.onclick = function() {
+        document.body.style.backgroundColor = "blue";
+        document.body.style.fontSize = "60px";
+    }
+
+</script>
+
+
+</body>
+</html>
