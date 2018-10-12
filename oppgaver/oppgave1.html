@@ -8,28 +8,28 @@
 <body>
 
 <p>Hei på deg</p>
-
-<button id="btnAktiver">Aktiver funksjon</button>
+    
+<button id="btnAktiver">Aktiver funksjon</button> <!--Lager en knapp som aktiverer funksjonen fra oppgave 2-->
 
 <script>
 
-    var btnAktiver = document.getElementById("btnAktiver");
+    var btnAktiver = document.getElementById("btnAktiver"); //Definerer knappen i JS ved å hente Id
 
 
 
+    skrivNavn();        //Aktiverer funksjonen fra oppgave 1 tre ganger
     skrivNavn();
     skrivNavn();
-    skrivNavn();
 
 
 
-    function skrivNavn() {
+    function skrivNavn() {    //Definerer funksjonen skrivNavn, som skal skrive ut navnet mitt med et linjeskift over og under
         document.write("<br>Mats <br>");
     }
 
-    btnAktiver.onclick = function() {
-        document.body.style.backgroundColor = "blue";
-        document.body.style.fontSize = "60px";
+    btnAktiver.onclick = function() { //Definerer en funksjon som aktiveres ved å trykke på knappen btnAktiver
+        document.body.style.backgroundColor = "blue"; //Bytter bakgrunnsfargen til blå
+        document.body.style.fontSize = "60px"; //Endrer skriftstørrelse til 60px
     }
 
 </script>
