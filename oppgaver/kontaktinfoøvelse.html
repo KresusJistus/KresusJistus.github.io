@@ -6,7 +6,7 @@
     <title>Oppgave 3</title>
 
     <style>
-
+                /*setter fargen til bakgrunnen, endrer skrifttype og aktiverer en animasjon*/
         h1 {
             font-family: "Berlin Sans FB";
             animation: gliInn 1.5s;
@@ -17,6 +17,7 @@
             overflow: hidden;
         }
 
+            /*definerer animasjonen og aktiverer den for elementene med inputfeltene og tekst*/
 
         @keyframes gliInn {
             from {margin-left: -2000px}
@@ -57,6 +58,8 @@
 
 <h1 id="navnOverskrift"></h1>
 
+        <!--Lager inputfeltene hvor man skriver inn kontaktinfoen som skal sendes-->
+    
 <article id="kontaktinfo">
 
     <div id="divNummer">
@@ -82,13 +85,15 @@
     <br>
 </article>
 <script>
+    
+            //Definerer variablene fornavn og etternavn, lik teksten som skrives i promptene
     var fornavn = prompt("Skriv ditt fornavn");
     var etternavn = prompt("Skriv ditt etternavn");
-
+            //Definerer overskrift ved hjelp av Id og setter inn fornavn og etternavn
     var navnOverskrift = document.getElementById("navnOverskrift");
-
+           
     navnOverskrift.innerHTML = "Hei, " + fornavn + " " + etternavn + "!";
-
+            //Definerer all den andre kontaktinfoen ved å hente Id fra document
     var inpNummer = document.getElementById("inpNummer");
     var pTelefonnummer = document.getElementById("pTelefonnummer");
     var inpAdresse = document.getElementById("inpAdresse");
@@ -97,17 +102,17 @@
     var pPoststed = document.getElementById("pPoststed");
     var inpPostkode = document.getElementById("inpPostkode");
     var pPostkode = document.getElementById("pPostkode");
-
+            //Definerer knappene btnBekreft og btnVidere ved å hente Id
     var btnBekreft = document.getElementById("btnBekreft");
     var btnVidere = document.getElementById("btnVidere");
-
+            //Lager funksjon som skriver ut innholdet til inputfeltene på siden 
     btnBekreft.onclick = function () {
         pTelefonnummer.innerHTML = "Telefonnummer: " + "+47" + inpNummer.value;
         pAdresse.innerHTML = "Adresse: " + inpAdresse.value;
         pPoststed.innerHTML = "Poststed: " + inpPoststed.value;
         pPostkode.innerHTML = "Postkode: " + inpPostkode.value;
     };
-
+        //Lager funksjon som printer kontaktinfoen på en tom side og takker for registrering
     btnVidere.onclick = function () {
         document.write(
             "Telefonnummer: +47" + inpNummer.value + "<br>" +
@@ -116,6 +121,8 @@
             "Postkode: " + inpPostkode.value+ "<br>" +
             "Takk for at du har registrert deg!"
         );
+        
+        //Litt utprøving med å endre style gjennom script
         document.body.style.fontFamily = "sans-serif";
         document.body.style.fontSize = "20px";
         document.body.style.lineHeight = "23px";
