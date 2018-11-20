@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gjett tallet!</title>
+</head>
+<body>
+<h1>Gjett Tallet mellom 1 og 100!</h1>
+
+<input id="inpGjett" type="number">
+<br>
+<button id="btnBekreft">Bekreft</button>
+<h1 id="svar"></h1>
+
+<script>
+
+    var hemmeligTall = Math.floor(Math.random()*100);
+    var inpGjett = document.getElementById("inpGjett");
+    var btnBekreft = document.getElementById("btnBekreft");
+    var svar = document.getElementById("svar");
+
+    btnBekreft.onclick = function() {
+        if (inpGjett.value == hemmeligTall) {
+            svar.innerHTML = "Du vant!!";
+        }
+        else if (inpGjett.value <= hemmeligTall) {
+            svar.innerHTML = "Du gjettet for lavt";
+        }
+        else if (inpGjett.value >= hemmeligTall) {
+            svar.innerHTML = "Du gjettet for høyt";
+        }
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>

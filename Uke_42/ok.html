@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>gridaru</title>
+    <style>
+        body    {
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            margin: 0;
+        }
+
+        header  {
+            background-color: lightcoral;
+            filter: drop-shadow(0 5px 5px black);
+        }
+
+        main    {
+            background-color: white;
+            text-align: center;
+            background-image: url("iwanttodie.jpg");
+            background-size: cover;
+            background-position: bottom;
+            color: white;
+        }
+
+        footer  {
+            background-color: blueviolet;
+        }
+        body > header > nav {
+            display: grid;
+            grid-auto-flow: column;
+        }
+
+        body > header > nav >   a   {
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (max-width: 750px) {
+
+            body > header > nav {
+                grid-auto-flow: row;
+            }
+        }
+        body > footer img {
+            width: 80px;
+            padding-top: 10px;
+        }
+        body > footer {
+            display: grid;
+            grid-auto-flow: column;
+            grid-gap: 20px;
+            text-align: center;
+        }
+        .active {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a class="active" href="#">SJUKE MEMES</a>
+        <a href="#">NORMIE MEMES</a>
+        <a href="#">EDGY MEMES</a>
+        <a href="#">TOP NOTCH MEMES</a>
+        <a href="#">MEMETELEFONEN.NO</a>
+    </nav>
+</header>
+<main>
+    <h1>Official Suicide assistance center</h1>
+    <h2>Fresh KYS-design</h2>
+
+
+
+</main>
+<footer>
+    <article>
+        <img src="blyanr.png">
+        <p>Dette er en blyant</p>
+    </article>
+    <article>
+        <img src="lapr.png">
+        <p>Ja word</p>
+    </article>
+    <article>
+        <img src="klokkr.png">
+        <p>Hva er klokka?? xDxD LMAO</p>
+    </article>
+</footer>
+
+</body>
+</html>

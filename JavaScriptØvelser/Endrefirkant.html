@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firkant</title>
+
+    <style>
+
+        #minFirkant {
+            background-color: peachpuff;
+            width: 200px;
+            height: 200px;
+            transition: 2s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <input type="range" id="inpStørrelse">
+    <input type="range" id="inpHoyde">
+    <input type="color" id="inpFarge">
+    <input type="range" id="inpSkygge">
+    <input type="range" id="inpRadius">
+
+    <div id="minFirkant"></div>
+
+    <script>
+
+        var inpStørrelse = document.getElementById("inpStørrelse");
+        var inpHoyde = document.getElementById("inpHoyde");
+        var minFirkant = document.getElementById("minFirkant");
+        var inpFarge = document.getElementById("inpFarge");
+        var inpSkygge = document.getElementById("inpSkygge");
+        var inpRadius = document.getElementById("inpRadius");
+
+        inpStørrelse.onchange = function() {
+            minFirkant.style.width = inpStørrelse.value + "%";
+        };
+        inpHoyde.onchange = function() {
+            minFirkant.style.height = inpHoyde.value + "vh";
+        };
+
+        inpFarge.onchange = function() {
+            minFirkant.style.backgroundColor = inpFarge.value;
+        };
+
+        inpRadius.onchange = function() {
+            minFirkant.style.borderRadius = inpRadius.value + "%";
+        }
+
+        inpSkygge.onchange = function() {
+            minFirkant.style.boxShadow = "black" + inpSkygge.value + "%";
+        };
+
+    </script>
+
+</body>
+</html>

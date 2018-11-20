@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas for-løkker</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var xPosisjon = 100;
+    var yPosisjon = 100;
+    var side = 10;
+    /*
+    var strek=150;
+
+    for (var i = 0; i<=10;i++) {
+        ctx.moveTo(xPosisjon,yPosisjon);
+        ctx.stroke();
+        ctx.lineTo(strek,yPosisjon);
+        yPosisjon=yPosisjon+10;
+    }
+    */
+    for (var i = 0; i<=10; i++) {
+        ctx.stroke();
+        ctx.rect(xPosisjon,yPosisjon,side,side);
+        xPosisjon = xPosisjon-10;
+        yPosisjon = yPosisjon-10;
+        side = side+20;
+    }
+</script>
+
+</body>
+</html>

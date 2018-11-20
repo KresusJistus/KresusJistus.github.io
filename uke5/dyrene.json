@@ -1,0 +1,29 @@
+{
+  "results" : [
+    {
+      "navn" : "Klaus Knegg",
+      "type" : "Hest",
+      "bilde" : "klaus.jpg",
+      "telefon" : "+4747462181",
+      "beskrivelse" : "Klaus rømte fra stallen på torsdag."
+    },
+    {  "navn" : "Warren",
+      "type" : "Varan",
+      "bilde" : "warren.jpg",
+      "telefon" : "+4747462181",
+      "beskrivelse" : "Warren hoppet ut vinduet i dag."
+    },
+    {  "navn" : "Muhammed",
+      "type" : "Muslim",
+      "bilde" : "muhammed.jpg",
+      "telefon" : "+4747462181",
+      "beskrivelse" : "Muhammed spiste gris og stakk av fra moskeen."
+    },
+    {  "navn" : "Muhammed",
+      "type" : "Muslim",
+      "bilde" : "muhammed.jpg",
+      "telefon" : "+4747462181",
+      "beskrivelse" : "Muhammed spiste gris og stakk av fra moskeen."
+    }
+  ]
+}

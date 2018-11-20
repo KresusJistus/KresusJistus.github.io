@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ja</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        main {
+            background-color: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: salmon;
+        }
+        #todolist > article {
+            display: grid;
+            grid-template-columns: 1fr auto;
+        }
+        .lblDelete {
+            padding-right: 5px;
+            font-weight: bold;
+            opacity: 0.1;
+            cursor: pointer;
+        }
+        #todolist > article:hover .lblDelete {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>TODO</h1>
+    <input type="text" id="inpTekst" autocomplete="off" autofocus placeholder="Hva må du huske å gjøre">
+    <section id="todolist">
+
+    </section>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAqdyGCmBje_1fKZeJpzC0iSiy0Z7w4vLg",
+        authDomain: "lolmao-9b309.firebaseapp.com",
+        databaseURL: "https://lolmao-9b309.firebaseio.com",
+        projectId: "lolmao-9b309",
+        storageBucket: "lolmao-9b309.appspot.com",
+        messagingSenderId: "864342096843"
+    };
+    firebase.initializeApp(config);
+</script>
+<script>
+
+    const inpTekst = document.getElementById("inpTekst");
+
+    const todolist = document.getElementById("todolist");
+
+    const db = firebase.database();
+    const todos = db.ref("todos");
+
+    function lagreTodo() {
+        todos.push({
+            tekst: inpTekst.value,
+            done: false
+        });
+        inpTekst.value = "";
+    }
+
+    function visTodo(snap){
+        const pk = snap.key;
+        const todo = snap.val();
+
+        todolist.innerHTML += `
+            <article id="${pk}">
+            <label class="lblTodo">${todo.tekst}</label>
+            <label class="lblDelete">X</label>
+            </article>
+            `;
+    }
+
+    inpTekst.onchange = lagreTodo;
+    todos.on("child_added", visTodo);
+
+
+
+
+</script>
+
+
+</body>
+</html>

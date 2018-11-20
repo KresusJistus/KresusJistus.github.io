@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laks</title>
+</head>
+<body>
+
+<h1 id="hSvar"></h1>
+
+<input type="color" id="bkrFarge">
+
+
+<script>
+
+    var hSvar= document.getElementById("hSvar");
+    var nark = prompt("Ruser du deg på narkotika?");
+    if (nark==="Ja"||nark==="ja") {
+        hSvar.innerHTML = "Ikke lov"
+    }
+    else {
+        hSvar.innerHTML = "Begynn med det"
+    }
+
+    var bkrFarge = document.getElementById("bkrFarge");
+
+    bkrFarge.onkeyup = function () {
+    document.body.style.backgroundColor = bkrFarge.value;
+    }
+
+</script>
+
+
+</body>
+</html>

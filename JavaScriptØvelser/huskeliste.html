@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Huskeliste</title>
+    <style>
+
+
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: dimgray;
+            color: white;
+
+        }
+
+        header {
+            text-align: center;
+            background-color: orangered;
+            width: 100vw;
+            padding-bottom: 15px;
+            padding-top: 15px;
+
+        }
+        ul {
+            margin-left: 5px;
+            font-size: 45px;
+        }
+
+        li:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            position: absolute;
+        }
+        #divInp {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 30px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>
+        Skriv inn ting du må huske!
+    </h1>
+</header>
+
+
+<div id="divInp">
+    <input type="text" id="inpLeggTil" placeholder="Ting jeg må huske">
+    <button id="btnKnapp">Legg til</button>
+</div>
+<div id="divListe">
+    <ul id="ulListe">
+    </ul>
+</div>
+
+<script>
+
+    const inpLeggTil = document.getElementById("inpLeggTil");
+    const btnKnapp = document.getElementById("btnKnapp");
+    const ulListe = document.getElementById("ulListe");
+
+    btnKnapp.onclick = function () {
+        if (inpLeggTil.value !=="") {
+            leggTilPunkt(inpLeggTil.value);
+            inpLeggTil.value = "";
+        }
+    };
+
+        function leggTilPunkt(tekst){
+        ulListe.innerHTML += "<li>" + tekst + "</li>";
+    }
+
+
+</script>
+
+</body>
+</html>

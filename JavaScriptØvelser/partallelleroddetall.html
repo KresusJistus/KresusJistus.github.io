@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skriv inn et tall</title>
+</head>
+<body>
+<input type="text" id="fortsette">
+<script>
+    var tall1 = Number(prompt("Skriv inn et tall"));
+
+    if (tall1%2===0) {
+        document.write("Det er et partall! Vil du fortsette?");
+
+    }
+    else {
+        document.write("Det er et oddetall! Vil du fortsette?");
+    }
+    var fortsette = document.getElementById("fortsette");
+
+    if (fortsette==="ja"||fortsette==="Ja"){
+
+    }
+
+</script>
+
+</body>
+</html>

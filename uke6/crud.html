@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD GANG SHIT</title>
+</head>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAqdyGCmBje_1fKZeJpzC0iSiy0Z7w4vLg",
+        authDomain: "lolmao-9b309.firebaseapp.com",
+        databaseURL: "https://lolmao-9b309.firebaseio.com",
+        projectId: "lolmao-9b309",
+        storageBucket: "lolmao-9b309.appspot.com",
+        messagingSenderId: "864342096843"
+    };
+    firebase.initializeApp(config);
+</script>
+<script>
+
+    const db = firebase.database();
+    const personer = db.ref("bilregister/personer");
+    const bilder = db.ref("bilregister/biler");
+
+    //CREATE
+    const petter = personer.child("1502200132145");
+    petter.set({
+        fornavn: "Petter",
+        etternavn: "Solberg"
+    });
+
+    const Martin = personer.child("12023823456");
+    martin.set({
+        fornavn: "Martin",
+        etternavn: "Schanche"
+    });
+
+    const volvo = biler.child("ZZ13254");
+    volvo.set({
+        merke: "Volvo",
+        modell: "V40",
+        eier: "12023823456"
+    });
+
+</script>
+
+</body>
+</html>

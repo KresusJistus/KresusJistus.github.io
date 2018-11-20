@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JA</title>
+
+    <style>
+        #sirkel {
+            width: 100px;
+            height: 100px;
+            border: solid;
+            border-radius: 50%;
+            transition: 0.1s;
+            background-image: url("20961039_1946606035353313_809664400_o.jpg");
+            background-size: 120px 150px;
+            background-position: center;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div id="sirkel"></div>
+
+
+<script>
+    let x = 100;
+    let y = 100;
+
+    const sirkel = document.getElementById("sirkel");
+
+    sirkel.style.marginLeft = x + "px";
+    sirkel.style.marginTop = y + "px";
+
+    window.onkeydown = function (event) {
+        if (event.code==="ArrowUp") {
+            flyttOpp();
+        }
+        else if (event.code==="ArrowDown"){
+            flyttNed();
+        }
+        else if (event.code==="ArrowLeft"){
+            flyttVenstre();
+        }
+        else if (event.code==="ArrowRight"){
+            flyttHøyre();
+        }
+    };
+
+    function flyttOpp() {
+        y=y-40;
+        sirkel.style.marginTop = y + "px";
+
+    }
+
+    function flyttNed() {
+        y=y+40;
+        sirkel.style.marginTop = y + "px";
+
+    }
+
+    function flyttVenstre() {
+        x=x-40;
+        sirkel.style.marginLeft = x+"px";
+    }
+    function flyttHøyre() {
+        x=x+40;
+        sirkel.style.marginLeft = x+"px";
+    }
+</script>
+
+</body>
+</html>

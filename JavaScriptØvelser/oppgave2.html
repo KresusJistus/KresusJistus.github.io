@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2</title>
+</head>
+<body>
+
+<h1>Hvilken type mobil har du?</h1>
+
+<input type="text" id="minMobil">
+<button id="svar">Svar</button>
+<p id="info"></p>
+
+
+<script>
+
+    var minMobil = document.getElementById("minMobil");
+    var svar =  document.getElementById("svar");
+    var info = document.getElementById("info");
+
+    svar.onclick = function () {
+        if (minMobil.value==="Samsung"||minMobil.value==="samsung"){
+            info.innerHTML= "Hefti da";
+        }
+       else if (minMobil.value==="iPhone"||minMobil.value==="iphone"){
+            info.innerHTML= "Overpriset as fyf";
+        }
+        else {
+            info.innerHTML= "Hva slags bullshit telefon er det?";
+        }
+    };
+
+
+
+</script>
+
+</body>
+</html>

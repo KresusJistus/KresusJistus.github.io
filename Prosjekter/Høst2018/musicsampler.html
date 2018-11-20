@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stilmusic.css">
+    <title>Title</title>
+
+</head>
+<body>
+<header>
+
+    <h1 id="overskrift">lol</h1>
+
+    <section id="secSjanger">
+        <a href="" id="sjanger1" class="sjanger">Thrash-Metal</a>
+        <a href="" id="sjanger2" class="sjanger">Hip-Hop</a>
+        <a href="" id="sjanger3" class="sjanger">Grunge</a>
+        <a href="" id="sjanger4" class="sjanger">Emo rap</a>
+        <a href="" id="sjanger5" class="sjanger">Psychedelic rock</a>
+        <a href="" id="sjanger6" class="sjanger"></a>
+        <a href="" id="sjanger7" class="sjanger"></a>
+    </section>
+
+</header>
+<main>
+<img id="bilder" src="bilder2018/metallica.jpg">
+
+
+</main>
+<footer>
+
+</footer>
+
+<script>
+
+    let bildeListe = ["bilder2018/metallica.jpg", "bilder2018/asaprocky.jpg", "bilder2018/nirvana.jpg","bilder2018/lilPeep.jpg","bilder2018/wishyouwerehere.jpg"];
+    let i=-1;
+    let sjangerListe = [document.getElementById("sjanger1"),
+                        document.getElementById("sjanger2"),
+                        document.getElementById("sjanger3"),
+                        document.getElementById("sjanger4"),
+                        document.getElementById("sjanger5"),
+                        document.getElementById("sjanger6")];
+    imgDuration = 7000;
+
+    function slideShow() {
+        document.getElementById('bilder').className += "fadeOut";
+        setTimeout(function() {
+            document.getElementById('bilder').src = bildeListe[i];
+            document.getElementById('bilder').className = "";
+            sjangerListe[i].style.backgroundColor="deepPink";
+            sjangerListe[i-1].style.backgroundColor="lightGray";
+            if (i===5||i<5){
+                sjangerListe[5].style.backgroundColor="lightGray"
+            }
+        },1000);
+        i++;
+        if (i == bildeListe.length) { i = 0; }
+        setTimeout(slideShow, imgDuration);
+    }
+    slideShow();
+
+</script>
+
+
+
+</body>
+</html>

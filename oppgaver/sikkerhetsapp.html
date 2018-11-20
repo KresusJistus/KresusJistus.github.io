@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sikkerhet</title>
+</head>
+<body>
+
+<h1>Tell antall personer!</h1>
+<h2>Plasser igjen:</h2>
+<h1 id="hPlasser"></h1>
+<button id="btnPluss">+</button>
+<button id="btnMinus">-</button>
+
+
+<script>
+    const btnPluss = document.getElementById("btnPluss");
+    const btnMinus = document.getElementById("btnMinus");
+
+    var hPlasser = document.getElementById("hPlasser");
+    var i = 60;
+
+    hPlasser.innerHTML = i;
+
+    btnPluss.onclick = leggTil;
+    btnMinus.onclick = trekkFra;
+
+        window.onkeydown = function (event) {
+            if (event.code==="ArrowUp"){
+                leggTil();
+            }
+            else if (event.code==="ArrowDown"){
+                trekkFra();
+            }
+        };
+
+        function leggTil() {
+        if (i<60){
+            i++;
+        }
+        hPlasser.innerHTML = i;
+
+    }
+
+        function trekkFra() {
+        if (i>0) {
+            if (i===11){
+                alert("Kun 10 plasser igjen!")
+            }
+            i--;
+        }
+        else {
+            alert("Maksimum antall plasser er registrert")
+        }
+        hPlasser.innerHTML = i;
+    }
+
+
+
+</script>
+</body>
+</html>

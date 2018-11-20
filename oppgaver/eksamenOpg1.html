@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oppgave 1</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+<img src="alberthoffman.jpg" height="500" id="bilder" alt="">
+<br>
+<button id="btnForrige">Forrige</button>
+<button id="btnNeste">Neste</button>
+<button id="btnRandom">Random</button>
+
+
+
+<script>
+
+    const bilder = document.getElementById("bilder");
+    const btnForrige = document.getElementById("btnForrige");
+    const btnNeste = document.getElementById("btnNeste");
+    const btnRandom = document.getElementById("btnRandom");
+
+
+    let bildeListe = ["alberthoffman.jpg", "keep-calm-and-praise-jesus-christ-3.jpg", "mahkus.png", "steinpave.jpg", "terencemckenna.jpeg"]
+
+    let n = 0;
+
+    btnForrige.onclick = function(){
+        if (n>0) {
+            n = n - 1;
+            bilder.src = bildeListe[n];
+        }
+        else {
+            n=4;
+            bilder.src = bildeListe[n];
+        }
+    };
+
+    btnNeste.onclick = function(){
+        if (n<4) {
+            n++;
+            bilder.src = bildeListe[n];
+        }
+        else {
+            n=0;
+            bilder.src = bildeListe[n];
+        }
+    };
+
+    btnRandom.onclick = function(){
+        bilder.src = bildeListe[Math.floor(Math.random()*bildeListe.length)];
+
+    }
+
+</script>
+
+
+</body>
+</html>

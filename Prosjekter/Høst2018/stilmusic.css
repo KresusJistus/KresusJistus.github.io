@@ -1,0 +1,102 @@
+
+
+
+* {
+    margin: 0;
+}
+body {
+    background-color: dimgray;
+}
+header {
+
+}
+main {
+    top: 90px;
+    position: absolute;
+    background-color: black;
+}
+
+#overskrift {
+    animation: slideinn 1s;
+
+}
+
+#secSjanger {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.sjanger {
+    border: solid black 3px;
+    border-radius: 5%;
+    text-decoration: none;
+    height: 100%;
+    font-size: 20px;
+    background-color: lightgray;
+    font-family: "Berlin Sans FB", sans-serif;
+}
+
+.sjanger:hover {
+    background-color: deeppink;
+    transform: scale(1.05);
+
+}
+
+@keyframes slideinn {
+    from {
+        margin-left: -2000px
+    }
+    to {
+        margin-left: 0px
+    }
+}
+
+header {
+    text-align: center;
+}
+
+@keyframes SlideNed {
+    from{
+        margin-top: -2000px;
+    }
+    to {
+        margin-top: 0;
+    }
+}
+
+#sjanger1 {
+    animation: SlideNed 1.2s;
+}
+#sjanger2 {
+    animation: SlideNed 1.3s;
+}
+#sjanger3 {
+    animation: SlideNed 1.4s;
+}
+#sjanger4 {
+    animation: SlideNed 1.5s;
+}
+#sjanger5 {
+    animation: SlideNed 1.6s;
+}
+#sjanger6 {
+    animation: SlideNed 1.7s;
+}
+#sjanger7 {
+    animation: SlideNed 1.8s;
+}
+#bilder {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    opacity:1;
+    transition: opacity 1s;
+
+}
+#bilder.fadeOut {
+    opacity:0;
+}

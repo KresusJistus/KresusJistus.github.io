@@ -11,6 +11,9 @@
             margin-right: 0;
             margin-left: 0;
             margin-top: 0;
+            animation: bgflytt infinite steps(6);
+            animation-duration: 1s;
+            background-size: cover;
         }
         main {
             text-align: center;
@@ -48,7 +51,27 @@
         }
         div {
             animation: sosialemedier;
-            animation-duration: 1s;
+            animation-duration: 2s;
+        }
+        @keyframes bgflytt {
+            20% {
+                background-position: 20px;
+            }
+            40% {
+                background-position: 40px;
+            }
+            60% {
+                background-position: 60px;
+            }
+            80% {
+                background-position: 80px;
+            }
+            90% {
+                background-position: 90px;
+            }
+            100% {
+                background-position: 3000px;
+            }
         }
     </style>
 </head>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hendelser</title>
+
+    <style>
+
+        #firkant {
+            width: 200px;
+            height: 200px;
+            background-color: dodgerblue;
+            border-radius: 50%;
+            background-size: 200px 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="firkant"></div>
+
+
+    <script>
+
+        var firkant = document.getElementById("firkant");
+
+        document.onmousemove = function() {
+            var x = event.clientX-100; //oppretter en variabel x, som er x-koordinaten til musas posisjon på nettsiden
+            var y = event.clientY-100; //oppretter en variabel y, som er y-koordinaten til musas posisjon på nettsiden
+            console.log("x "+x); //skriver ut x-koordinaten i konsollen
+            console.log("y "+y); //skriver ut y-koordinaten i konsollen
+
+            firkant.style.marginLeft = x + "px"; //firkant sin marginLeft skal være lik verdien av x + stringen "px"
+            firkant.style.marginTop = y + "px"; //firkant sin marginTop skal være lik verdien av y + stringen "px"
+
+        };
+
+
+    </script>
+
+
+</body>
+</html>
