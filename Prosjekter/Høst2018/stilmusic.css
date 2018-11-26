@@ -1,6 +1,4 @@
 
-
-
 * {
     margin: 0;
 }
@@ -14,10 +12,14 @@ main {
     top: 90px;
     position: absolute;
     background-color: black;
+    margin-top: 15px;
 }
 
 #overskrift {
     animation: slideinn 1s;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 0.5px white;
+    font-family: "Berlin Sans FB", sans-serif;
 
 }
 
@@ -40,7 +42,6 @@ main {
 }
 
 .sjanger:hover {
-    background-color: deeppink;
     transform: scale(1.05);
 
 }
@@ -50,7 +51,7 @@ main {
         margin-left: -2000px
     }
     to {
-        margin-left: 0px
+        margin-left: 0
     }
 }
 
@@ -71,22 +72,22 @@ header {
     animation: SlideNed 1.2s;
 }
 #sjanger2 {
-    animation: SlideNed 1.3s;
-}
-#sjanger3 {
     animation: SlideNed 1.4s;
 }
-#sjanger4 {
-    animation: SlideNed 1.5s;
-}
-#sjanger5 {
+#sjanger3 {
     animation: SlideNed 1.6s;
 }
+#sjanger4 {
+    animation: SlideNed 1.8s;
+}
+#sjanger5 {
+    animation: SlideNed 2s;
+}
 #sjanger6 {
-    animation: SlideNed 1.7s;
+    animation: SlideNed 2.2s;
 }
 #sjanger7 {
-    animation: SlideNed 1.8s;
+    animation: SlideNed 2.4s;
 }
 #bilder {
     display: block;
@@ -99,4 +100,13 @@ header {
 }
 #bilder.fadeOut {
     opacity:0;
+}
+
+footer {
+    position: fixed;
+    bottom: 5px;
+}
+
+#creds {
+    font-family: "Berlin Sans FB", sans-serif;
 }
