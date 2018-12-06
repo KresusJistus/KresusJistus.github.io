@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sjangerStyle.css">
+    <title>Title</title>
+    <style>
+        .sjanger {
+            background-color: gold;
+        }
+        #infodiv {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    </style>
+</head>
+<body>
+<header>
+
+    <h1 id="overskrift">Hip-hop</h1>
+
+    <section id="secSjanger">
+        <a href="sjanger1.html" id="sjanger1" class="sjanger">Heavy metal</a>
+        <a href="sjanger2.html" id="sjanger2" class="sjanger">Hip-hop</a>
+        <a href="sjanger3.html" id="sjanger3" class="sjanger">Grunge</a>
+        <a href="sjanger4.html" id="sjanger4" class="sjanger">Emo rap</a>
+        <a href="sjanger5.html" id="sjanger5" class="sjanger">Progressive rock</a>
+        <a href="sjanger6.html" id="sjanger6" class="sjanger">Psychedelic rock</a>
+    </section>
+
+</header>
+<main>
+    <h3>Here you can find two great examples from the extremely broad hip-hop genre!</h3>
+    <p>The first being a modern hip-hop talent, the second being a deceased legend from the 90's!</p>
+    <section>
+
+        <div id="infodiv">
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">A$AP Rocky</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/asaprocky.jpg">
+                                <p>Praise The Lord (Da Shine):</p>
+                                <audio controls>
+                                    <source src="audio2018/A$AP%20Rocky%20-%20Praise%20The%20Lord%20(Da%20Shine)%20(Audio)%20ft.%20Skepta.mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">The Notorious B.I.G.</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/biggie.jpg">
+                                <p>Hypnotize:</p>
+                                <audio controls>
+                                    <source src="audio2018/Biggie%20Smalls%20-%20Hypnotize.mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <a id="linkHovedside" href="musicsampler.html">Back to front page!</a>
+</footer>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.utvid_question').click(function() {
+
+            if ($(this).parent().is('.open')){
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':'0'},500);
+                $(this).closest('.utvid').removeClass('open');
+
+            }else{
+                var newHeight =$(this).closest('.utvid').find('.utvid_answer').height() +'px';
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':newHeight},500);
+                $(this).closest('.utvid').addClass('open');
+            }
+
+        });
+
+    });
+</script>
+</body>
+</html>

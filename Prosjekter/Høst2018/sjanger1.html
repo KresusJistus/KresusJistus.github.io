@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sjangerStyle.css">
+    <title>Heavy metal</title>
+    <style>
+
+        .sjanger {
+            background-color: steelblue;
+        }
+
+        #infodiv {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .utvid_question {
+            color: black;
+            -webkit-text-stroke: 2px solid white;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+
+    <h1 id="overskrift">Heavy metal</h1>
+
+    <section id="secSjanger">
+        <a href="sjanger1.html" id="sjanger1" class="sjanger">Heavy metal</a>
+        <a href="sjanger2.html" id="sjanger2" class="sjanger">Hip-Hop</a>
+        <a href="sjanger3.html" id="sjanger3" class="sjanger">Grunge</a>
+        <a href="sjanger4.html" id="sjanger4" class="sjanger">Emo rap</a>
+        <a href="sjanger5.html" id="sjanger5" class="sjanger">Progressive rock</a>
+        <a href="sjanger6.html" id="sjanger6" class="sjanger">Psychedelic rock</a>
+    </section>
+
+</header>
+<main>
+    <h3>Below you can see and listen to the heavy metal bands i listen to the most. Go ahead and click the names!</h3>
+    <section>
+
+        <div id="infodiv">
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">Metallica</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/metallica.jpg">
+                                <p>Master of Puppets:</p>
+                                <audio controls>
+                                    <source src="audio2018/Metallica-Master%20Of%20Puppets%20(Lyrics).mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">System of a Down</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/soad.jpg">
+                                <p>Chop Suey!:</p>
+                                <audio controls>
+                                    <source src="audio2018/Chop%20Suey%20-%20System%20of%20a%20Down%20(lyrics).mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="utvid_container">
+                        <div class="utvid">
+                            <div class="utvid_question">Ghost</div>
+                            <div class="utvidet_container">
+                                <div class="utvid_answer">
+                                    <img src="bilder2018/ghost.jpg">
+                                    <p>Absolution:</p>
+                                    <audio controls>
+                                        <source src="audio2018/Ghost%20-%20Absolution.mp3">
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+
+</main>
+<footer>
+<a id="linkHovedside" href="musicsampler.html">Back to front page!</a>
+</footer>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.utvid_question').click(function() {
+
+            if ($(this).parent().is('.open')){
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':'0'},500);
+                $(this).closest('.utvid').removeClass('open');
+
+            }else{
+                var newHeight =$(this).closest('.utvid').find('.utvid_answer').height() +'px';
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':newHeight},500);
+                $(this).closest('.utvid').addClass('open');
+            }
+
+        });
+
+    });
+</script>
+</body>
+</html>

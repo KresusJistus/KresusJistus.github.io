@@ -25,7 +25,7 @@ main {
 
 #secSjanger {
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(6,1fr);
     grid-gap: 10px;
     margin-right: 5px;
     margin-left: 5px;
@@ -86,9 +86,6 @@ header {
 #sjanger6 {
     animation: SlideNed 2.2s;
 }
-#sjanger7 {
-    animation: SlideNed 2.4s;
-}
 #bilder {
     display: block;
     margin-left: auto;
@@ -105,6 +102,8 @@ header {
 footer {
     position: fixed;
     bottom: 5px;
+    text-align: center;
+    width: 100%;
 }
 
 #creds {

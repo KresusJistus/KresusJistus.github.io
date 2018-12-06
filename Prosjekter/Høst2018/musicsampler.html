@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="stilmusic.css">
     <title>Title</title>
 
+    <style>
+        #btnSpillSang {
+            margin-top: 10px;
+        }
+
+    </style>
+
 </head>
 <body>
 <header>
@@ -13,13 +20,12 @@
     <h1 id="overskrift">A completely random journey through music</h1>
 
     <section id="secSjanger">
-        <a href="" id="sjanger1" class="sjanger">Thrash-Metal</a>
-        <a href="" id="sjanger2" class="sjanger">Hip-Hop</a>
-        <a href="" id="sjanger3" class="sjanger">Grunge</a>
-        <a href="" id="sjanger4" class="sjanger">Emo rap</a>
-        <a href="" id="sjanger5" class="sjanger">Progressive rock</a>
-        <a href="" id="sjanger6" class="sjanger">Psychedelic rock</a>
-        <a href="" id="sjanger7" class="sjanger">Alternative metal</a>
+        <a href="sjanger1.html" id="sjanger1" class="sjanger">Heavy Metal</a>
+        <a href="sjanger2.html" id="sjanger2" class="sjanger">Hip-Hop</a>
+        <a href="sjanger3.html" id="sjanger3" class="sjanger">Grunge</a>
+        <a href="sjanger4.html" id="sjanger4" class="sjanger">Emo rap</a>
+        <a href="sjanger5.html" id="sjanger5" class="sjanger">Progressive rock</a>
+        <a href="sjanger6.html" id="sjanger6" class="sjanger">Psychedelic rock</a>
     </section>
 
 </header>
@@ -30,11 +36,36 @@
 </main>
 <footer>
 
+    <input type='button' id="btnSpillSang" onclick='playRandomSound();' value='Play Random Song'>
+    <span id='player'></span>
     <p id="creds">All musical and graphical content belongs to the creators, this is simply a display of Kresus Jistus' favourite music</p>
 
 </footer>
 
 <script>
+
+    function playRandomSound(){
+
+        var sounds = [
+            "audio2018/Metallica-Master%20Of%20Puppets%20(Lyrics).mp3",
+            "audio2018/Chop%20Suey%20-%20System%20of%20a%20Down%20(lyrics).mp3",
+            "audio2018/Ghost%20-%20Absolution.mp3",
+            "audio2018/A$AP%20Rocky%20-%20Praise%20The%20Lord%20(Da%20Shine)%20(Audio)%20ft.%20Skepta.mp3",
+            "audio2018/Biggie%20Smalls%20-%20Hypnotize.mp3",
+            "audio2018/Nirvana%20-%20Smells%20Like%20Teen%20Spirit%20(HQ).mp3",
+            "audio2018/Foo%20Fighters%20-%20I'll%20Stick%20Around.mp3",
+            "audio2018/Lil%20Peep%20-%20Cry%20Alone%20(Lyrics).mp3",
+            "audio2018/XXXTENTACION%20-%20SAD!.mp3",
+            "audio2018/Pink%20Floyd%20-%20Us%20and%20Them.mp3",
+            "audio2018/Pink%20Floyd%20-%20Comfortably%20numb%20(1).mp3",
+            "audio2018/Tame%20Impala%20-%20Let%20It%20Happen%20(Official%20Audio).mp3",
+            "audio2018/The%20Beatles%20-%20%20Lucy%20in%20the%20Sky%20with%20Diamonds.mp3"
+        ];
+
+        var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+
+        document.getElementById("player").innerHTML="<embed src=\""+soundFile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+    }
 
     let bildeListe =
         ["bilder2018/metallica.jpg",
@@ -42,8 +73,7 @@
         "bilder2018/nirvana.jpg",
         "bilder2018/lilPeep.jpg",
         "bilder2018/wishyouwerehere.jpg",
-        "bilder2018/tameImpala.png",
-        "bilder2018/soad.jpg"];
+        "bilder2018/tameImpala.png"];
 
     let i=-1;
     let sjangerListe = [document.getElementById("sjanger1"),
@@ -51,8 +81,7 @@
                         document.getElementById("sjanger3"),
                         document.getElementById("sjanger4"),
                         document.getElementById("sjanger5"),
-                        document.getElementById("sjanger6"),
-                        document.getElementById("sjanger7")
+                        document.getElementById("sjanger6")
     ];
     imgDuration = 7000;
 
@@ -65,9 +94,9 @@
             sjangerListe[i-1].style.backgroundColor="lightGray";
         },1000);
         i++;
-        if (i == bildeListe.length) {
+        if (i === bildeListe.length) {
             i = 0;
-            sjangerListe[6].style.backgroundColor = "lightGray";
+            sjangerListe[5].style.backgroundColor = "lightGray";
         }
         setTimeout(slideShow, imgDuration);
     }

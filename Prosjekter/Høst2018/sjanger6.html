@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sjangerStyle.css">
+    <title>Title</title>
+    <style>
+        #infodiv {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #sjanger1 {
+            background-color: green;
+        }
+
+        #sjanger2 {
+            background-color: red;
+        }
+
+        #sjanger3 {
+            background-color: yellow;
+        }
+
+        #sjanger4 {
+            background-color: orangered;
+        }
+
+        #sjanger5 {
+            background-color: deeppink;
+        }
+
+        #sjanger6 {
+            background-color: peru;
+        }
+
+        aside {
+            background-color: black;
+            height: 100%;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+<header>
+
+    <h1 id="overskrift">Psychedelic rock</h1>
+
+    <section id="secSjanger">
+        <a href="sjanger1.html" id="sjanger1" class="sjanger">Heavy metal</a>
+        <a href="sjanger2.html" id="sjanger2" class="sjanger">Hip-Hop</a>
+        <a href="sjanger3.html" id="sjanger3" class="sjanger">Grunge</a>
+        <a href="sjanger4.html" id="sjanger4" class="sjanger">Emo rap</a>
+        <a href="sjanger5.html" id="sjanger5" class="sjanger">Progressive rock</a>
+        <a href="sjanger6.html" id="sjanger6" class="sjanger">Psychedelic rock</a>
+    </section>
+
+</header>
+<main>
+    <h3>A very experimental genre, here performed by one modern group and the other being one of the biggest names in music history.</h3>
+    <h3>Both playing with a real 60's tune!</h3>
+    <section>
+
+        <div id="infodiv">
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">Tame Impala</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/tame-impala-illustration1.gif">
+                                <p>Let It Happen:</p>
+                                <audio controls>
+                                    <source src="audio2018/Tame%20Impala%20-%20Let%20It%20Happen%20(Official%20Audio).mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">The Beatles</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/thebeatles.jpg">
+                                <p>Lucy In The Sky With Diamonds:</p>
+                                <audio controls>
+                                    <source src="audio2018/The%20Beatles%20-%20%20Lucy%20in%20the%20Sky%20with%20Diamonds.mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>
+<footer>
+    <a id="linkHovedside" href="musicsampler.html">Back to front page!</a>
+</footer>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.utvid_question').click(function() {
+
+            if ($(this).parent().is('.open')){
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':'0'},500);
+                $(this).closest('.utvid').removeClass('open');
+
+            }else{
+                var newHeight =$(this).closest('.utvid').find('.utvid_answer').height() +'px';
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':newHeight},500);
+                $(this).closest('.utvid').addClass('open');
+            }
+
+        });
+
+    });
+</script>
+</body>
+</html>

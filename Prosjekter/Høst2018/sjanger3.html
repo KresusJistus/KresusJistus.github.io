@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="sjangerStyle.css">
+    <title>Title</title>
+    <style>
+        .sjanger {
+            background-color: lightblue;
+        }
+        #infodiv {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    </style>
+</head>
+<body>
+<header>
+
+    <h1 id="overskrift">Grunge</h1>
+
+    <section id="secSjanger">
+        <a href="sjanger1.html" id="sjanger1" class="sjanger">Heavy metal</a>
+        <a href="sjanger2.html" id="sjanger2" class="sjanger">Hip-Hop</a>
+        <a href="sjanger3.html" id="sjanger3" class="sjanger">Grunge</a>
+        <a href="sjanger4.html" id="sjanger4" class="sjanger">Emo rap</a>
+        <a href="sjanger5.html" id="sjanger5" class="sjanger">Progressive rock</a>
+        <a href="sjanger6.html" id="sjanger6" class="sjanger">Psychedelic rock</a>
+    </section>
+
+</header>
+<main>
+    <h3>Wondering what grunge sounds like at it's best? Go ahead and click the bands' names!</h3>
+    <section>
+
+        <div id="infodiv">
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">Nirvana</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/nirvana.jpg">
+                                <p>Smells Like Teen Spirit:</p>
+                                <audio controls>
+                                    <source src="audio2018/Nirvana%20-%20Smells%20Like%20Teen%20Spirit%20(HQ).mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="utvid_container">
+                    <div class="utvid">
+                        <div class="utvid_question">Foo Fighters</div>
+                        <div class="utvidet_container">
+                            <div class="utvid_answer">
+                                <img src="bilder2018/Foo-Fighters.jpg">
+                                <p>I'll Stick Around:</p>
+                                <audio controls>
+                                    <source src="audio2018/Foo%20Fighters%20-%20I'll%20Stick%20Around.mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>
+<footer>
+    <a id="linkHovedside" href="musicsampler.html">Back to front page!</a>
+</footer>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.utvid_question').click(function() {
+
+            if ($(this).parent().is('.open')){
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':'0'},500);
+                $(this).closest('.utvid').removeClass('open');
+
+            }else{
+                var newHeight =$(this).closest('.utvid').find('.utvid_answer').height() +'px';
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':newHeight},500);
+                $(this).closest('.utvid').addClass('open');
+            }
+
+        });
+
+    });
+</script>
+</body>
+</html>
