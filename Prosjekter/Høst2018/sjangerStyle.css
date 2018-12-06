@@ -89,7 +89,7 @@ main {
 .utvid_question {
     cursor: pointer;
     color: white;
-    -webkit-text-stroke: 0.2px black;
+    -webkit-text-stroke: 0.5px black;
     background-color: dimgray;
     font-size: 30px;
 }
