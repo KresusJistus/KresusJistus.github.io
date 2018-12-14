@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oppgave 3 heldags</title>
+</head>
+<body>
+
+<h1>Importkalkulator!</h1>
+<p>Skriv inn pris i kr:</p>
+<input type="number" id="inpPris">
+<button id="btnSjekk">Sjekk sum</button>
+<span id="spanPris"></span>
+
+
+<script>
+    let inpPris = document.getElementById("inpPris");
+    const btnSjekk = document.getElementById("btnSjekk");
+    let spanPris = document.getElementById("spanPris");
+
+    btnSjekk.onclick = function () {
+        if (inpPris.value<350) {
+            spanPris.innerHTML = "Totalpris på varen er "+inpPris.value+"kr";
+        }
+        else {
+            spanPris.innerHTML = "Totalpris på varen, med toll og moms, er "+(inpPris.value*1.25+158)+"kr"
+        }
+    }
+
+</script>
+</body>
+</html>

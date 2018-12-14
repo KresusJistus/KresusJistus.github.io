@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oppgave 5 heldags</title>
+    <style>
+
+        * {
+            text-align: center;
+            font-family: "Berlin Sans FB";
+            margin: 0;
+        }
+        .utvid_question {
+            cursor: pointer;
+        }
+
+        .utvidet_container {
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            margin-left: 10px;
+        }
+        section {
+            margin-top: 15px;
+            width: 100%;
+            height: 55vh;
+        }
+        #infodiv {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .utvid_answer>img {
+            width: 250px;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .knapp {
+            margin-bottom: 20px;
+            background-color: limegreen;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <h1>Stortingspartier</h1>
+<section>
+
+    <div id="infodiv">
+        <div class="utvid_container">
+            <div class="utvid">
+                <div class="utvid_question"><img src="bilder/miljopartiet.png"></div>
+                <div class="utvidet_container">
+                    <div class="utvid_answer">
+                        <p>Miljøpartiet de grønne er et norsk parti med 1 representant på stortinget. <br>
+                            Deres slagord er "Ta vare på fremtiden".
+                        </p>
+                        <img id="slideMDG" src="bilder/mdg01fixed.jpg">
+                        <br>
+                        <button id="MDGForrige" class="knapp">Forrige</button>
+                        <button id="MDGNeste" class="knapp">Neste</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="utvid_container">
+            <div class="utvid">
+                <div class="utvid_question"><img src="bilder/sp.png"></div>
+                <div class="utvidet_container">
+                    <div class="utvid_answer">
+                        <p>Senterpartiet er et norsk parti med 19 representanter på stortinget. <br>
+                           Deres slagord er "Vi tror på hele Norge".
+                        </p>
+                        <img id="slideSP" src="bilder/sp01.jpg">
+                        <br>
+                        <button id="SPForrige" class="knapp">Forrige</button>
+                        <button id="SPNeste" class="knapp">Neste</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.utvid_question').click(function() {
+
+            if ($(this).parent().is('.open')){
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':'0'},500);
+                $(this).closest('.utvid').removeClass('open');
+
+            }else{
+                var newHeight =$(this).closest('.utvid').find('.utvid_answer').height() +'px';
+                $(this).closest('.utvid').find('.utvidet_container').animate({'height':newHeight},500);
+                $(this).closest('.utvid').addClass('open');
+            }
+
+        });
+
+    });
+    let bilderMDG = [
+        "bilder/mdg01fixed.jpg",
+        "bilder/mdg02.jpg",
+        "bilder/mdg03.jpg",
+    ];
+    let bilderSP = [
+        "bilder/sp01.jpg",
+        "bilder/sp02.jpg",
+        "bilder/sp03.jpg"
+    ];
+
+    const MDGNeste = document.getElementById("MDGNeste");
+    const MDGForrige = document.getElementById("MDGForrige");
+    const SPNeste = document.getElementById("SPNeste");
+    const SPForrige = document.getElementById("SPForrige");
+    let slideMDG = document.getElementById("slideMDG");
+    let slideSP = document.getElementById("slideSP");
+
+
+    let n = 0;
+    MDGNeste.onclick = function(){
+        n++;
+        if (n >= bilderMDG.length){
+            n = 0;
+        }
+        slideMDG.src = bilderMDG[n];
+    };
+    MDGForrige.onclick = function(){
+        n--;
+        if (n<0){
+            n = bilderMDG.length - 1
+        }
+        slideMDG.src = bilderMDG[n];
+    };
+
+
+
+
+    let m = 0;
+    SPNeste.onclick = function(){
+        m++;
+        if (m >= bilderSP.length){
+            m = 0;
+        }
+        slideSP.src = bilderSP[m];
+    };
+    SPForrige.onclick = function(){
+        m--;
+        if (m<0){
+            m = bilderSP.length - 1
+        }
+        slideSP.src = bilderSP[m];
+    };
+
+</script>
+</body>
+</html>

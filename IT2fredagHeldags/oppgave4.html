@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oppgave 4 heldags</title>
+    <style>
+        body {
+            margin-left: 20px;
+        }
+        #bilder {
+            margin-top: 20px;
+            width: 200px;
+            height: auto;
+        }
+        #btnAlder {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="btnAlder">Ny tilfeldig person</button>
+<br>
+<span id="spanAlder"></span>
+<br>
+
+<img id="bilder">
+
+<script>
+
+    const bilder = document.getElementById("bilder");
+    const btnAlder = document.getElementById("btnAlder");
+    let spanAlder = document.getElementById("spanAlder");
+    
+    btnAlder.onclick = function () {
+        var alder = Math.floor(Math.random()*70)+1;
+        if (alder<15){
+            spanAlder.innerHTML = alder + " år!? Ikke for smårollinger, minst 15 år!";
+            bilder.src = "bilder/ung.jpg";
+        }
+        else if (alder>60){
+            spanAlder.innerHTML = alder + " år!? Ikke for gamlinger, maks 60 år!";
+            bilder.src = "bilder/gammel.jpg";
+        }
+        else {
+            spanAlder.innerHTML = alder + " år! Gratulerer, du er akkurat passe gammel!";
+            bilder.src = "bilder/passe.jpg";
+        }
+    }
+    
+
+
+</script>
+</body>
+</html>
