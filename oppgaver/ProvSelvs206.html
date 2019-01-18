@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prøv selv</title>
+
+    <style>
+        /*#imgHenrik {
+            width: auto;
+            height: 300px;
+        }
+        */
+    </style>
+</head>
+<body>
+<!--
+<img id="imgHenrik" src="bildevedlegg/remfin-01.png">
+<br>
+<button id="btnForrige">Forrige</button>
+<button id="btnNeste">Neste</button>
+-->
+
+<button id="btnLeggTil">Legg til noe i array</button>
+
+<select id="velgElement">
+    <option>Rekesalat</option>
+    <option>1000kr</option>
+    <option>1 stk Henrik Remmen</option>
+
+
+</select>
+
+
+<button id="btnVelgElement">Legg til valgte punkt</button>
+
+
+<script>
+
+
+    /*
+
+    Oppgave 1
+
+    let matvarer = ["ost", "paprika", "brød", "kaviar"];
+
+    matvarer.unshift("snus");
+    matvarer.pop();
+    matvarer.splice(3,1,"knekkebrød");
+
+    document.write(matvarer);
+
+
+    Oppgave 2
+
+    let tresorter = ["lønn", "hassel", "bjørk", "eik", "blodlønn", "furu", "gran"];
+
+    tresorter.splice(3,1);
+    tresorter.splice(2,1,"hengebjørk");
+    tresorter.splice(4,2);
+    tresorter.splice(4,0,"fjellbjørk", "dvergbjørk");
+
+    tresorter.sort();
+
+    */
+
+    /*
+    //Oppgave 3 og 4
+
+    let imgHenrik = document.querySelector("#imgHenrik");
+    let btnForrige = document.querySelector("#btnForrige");
+    let btnNeste = document.querySelector("#btnNeste");
+
+    let bilderAvHenrik = ["bildevedlegg/remfin-01.png",
+                            "bildevedlegg/remogboks.jpg",
+                            "bildevedlegg/500089_718395k2kf54ju72cf9489.jpg",
+                            "bildevedlegg/20930542_1946605778686672_712228252_o.png"];
+
+    let i = 0;
+
+    btnForrige.onclick = function () {
+
+        if (i===bilderAvHenrik.length){
+            i=0;
+            imgHenrik.src = bilderAvHenrik[i];
+        }
+        i++;
+        imgHenrik.src = bilderAvHenrik[i];
+    };
+
+    btnNeste.onclick = function () {
+        if(i===0) {
+            i=3;
+            imgHenrik.src = bilderAvHenrik[i];
+        }
+
+        else {
+            i--;
+            imgHenrik.src = bilderAvHenrik[i];
+        }
+
+    };
+
+    function sammenligne(a,b) {
+        a=a.toUpperCase();
+        b=b.toLowerCase();
+        return b<a;
+    }
+
+    bilderAvHenrik.sort(sammenligne);
+
+    */
+//Oppgave 5
+
+    /*
+    let talliste = [
+        2,
+        1,
+        47,
+        4,
+        3
+    ];
+
+    talliste.sort()
+    */
+
+//Oppgave 6
+
+let fylleArray = [];
+let btnLeggTil = document.querySelector("#btnLeggTil");
+let velgElement = document.querySelector("#velgElement");
+let btnVelgElement = document.querySelector("#btnVelgElement");
+
+btnLeggTil.onclick = function () {
+    fylleArray.push("Et element");
+};
+
+btnVelgElement.onclick = function () {
+    fylleArray.push(velgElement.value)
+}
+
+</script>
+</body>
+</html>
