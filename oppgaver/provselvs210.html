@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prøv Selv s. 210</title>
+</head>
+<body>
+
+
+<!--
+<ol id="handleliste"></ol>
+-->
+<!--
+<ol id="bokliste"></ol>
+-->
+<!--
+<div>Dager med lavere temperatur enn 5 grader er <b id="bAntallDager"></b>.
+    Gjennomsnittstemperaturen er <b id="tempGjennomsnitt"></b></div>
+-->
+
+<input type="text" id="inpNavn">
+<input type="number" id="inpFilmer">
+
+<button id="btnRegistrer">Registrer</button>
+
+
+<ol id="elevListe"></ol>
+
+<script>
+    //Oppgave 1
+    /*
+    let matvarer = ["ost", "brød", "paprika", "kaviar"];
+    let handleliste = document.querySelector("#handleliste");
+
+    for (let vare of matvarer){
+        handleliste.innerHTML += `<li>${vare}</li>`;
+
+    }
+
+    for (var i=0;i<matvarer.length;i++){
+        var vare = matvarer[i];
+        document.write(vare)
+    }
+    */
+    //Oppgave 2
+    /*
+    let bøker = ["Ulvenatten", "Ringenes herre", "Bestialitetens historie", "Den siste lærling", "kode 2"]
+    let bokliste = document.querySelector("#bokliste");
+    bøker.sort();
+    for (let bok of bøker){
+        bokliste.innerHTML += `<li>${bok}</li>`;
+    }
+    */
+    //Oppgave 3
+
+    /*
+    let temperaturLogg = [3,4,5,6,5,5,6,4,4,5];
+    function sammenligneTall(a,b) {
+        return a-b;
+    }
+    temperaturLogg.sort(sammenligneTall);
+    let bAntallDager = document.querySelector("#bAntallDager");
+    var antallDager = 0;
+
+    for (temperatur of temperaturLogg){
+        if (temperatur<5){
+            antallDager++
+        }
+
+    }
+    bAntallDager.innerHTML = antallDager;
+    let sum = 0;
+    let tempGjennomsnitt = document.querySelector("#tempGjennomsnitt");
+
+    for (temp of temperaturLogg){
+        sum += temp;
+    }
+    let snitt = sum/temperaturLogg.length;
+    tempGjennomsnitt.innerHTML = snitt;
+    */
+    /*
+    // Oppgave 4
+
+    let objectArray = [
+        {navn:"Remmen", alder:"13"},
+        {navn:"Spider-man", alder:"16"},
+        {navn:"Svein", alder:"47"},
+        {navn:"Petter", alder:"21"},
+        {navn:"Maximus Decimus Meridius", alder:"34"}
+    ];
+    */
+    /*
+    //Sorterer etter laveste alder
+    objectArray.sort(function (a,b) {
+        return a.alder-b.alder;
+    });
+
+    //Sorterer etter høyeste alder
+    objectArray.sort(function (a,b) {
+        return b.alder-a.alder;
+    });
+
+    for (let i=0;i<objectArray.length;i++){
+      let objekt = objectArray[i];
+      console.log(objekt.navn,objekt.alder);
+    };
+    */
+    //Oppgave 5 ikke ferdig...
+    let inpNavn = document.querySelector("#inpNavn");
+    let inpFilmer = document.querySelector("#inpFilmer");
+    const btnRegistrer = document.querySelector("#btnRegistrer");
+    let elevListe = document.querySelector("#elevListe");
+
+    let elevArray = [];
+
+    btnRegistrer.onclick = function () {
+        elevArray.push(navn=inpNavn,film=inpFilmer);
+        elevArray.push(inpFilmer.value);
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
