@@ -39,28 +39,84 @@
 
 <main>
 
-    <h1>God dag, reisende. Vennligst skriv ditt navn.</h1>
+    <h1 id="velkommen">God dag, reisende. Vennligst skriv ditt navn.</h1>
 
     <input type="text" id="inpBrukernavn">
 
     <button id="btnStart">Start</button>
 
-    <p id="innhold"></p>
+    <div id="text"></div>
+
+    <div id="buttonBox"></div>
 
 </main>
 
 <script>
-    let brukernavn = document.querySelector("#inpBrukernavn");
+    let inpBrukernavn = document.querySelector("#inpBrukernavn");
+
+    let brukernavn;
+
+    let velkommen = document.querySelector("#velkommen");
 
     const btnStart = document.querySelector("#btnStart");
 
-    let innhold = document.querySelector("#innhold");
+    let text = document.querySelector("#text");
+
+    let buttonBox = document.querySelector("#buttonBox");
+
+
+    inpBrukernavn.onkeyup = function () {
+        brukernavn = inpBrukernavn.value
+    };
+
+    let changeButtons = function (buttonList) {
+        buttonBox.innerHTML = "";
+        for (var i=0; i<buttonList.length; i++)
+        {
+            buttonBox.innerHTML += "<button onClick=" + buttonList[i][1]+">" + buttonList[i][0]+"</button>";
+
+        }
+    };
+
+    let changeText = function (words) {
+        text.innerHTML = words.replace("brukernavn",brukernavn);
+    };
+
+    let advanceTo = function (s) {
+        changeButtons(s.buttons);
+        changeText(s.text)
+    };
+
+    let scenario = {
+    one: {
+        text: "Vær hilset, brukernavn!",
+        buttons: [["Begynn ditt eventyr", "advanceTo(scenario.two)"]]
+    },
+
+    two: {
+        text: "Du ankommer hovedinngangen til Sandvika VGS sent om natten. Det er mørkt, men dørene står likevel vidt åpne.",
+        buttons: [["Skummelt. Snu og gå tilbake!", "advanceTo(scenario.three)"],["Spennende! Gå inn!", "advanceTo(scenario.four)"]]
+    },
+
+    three: {
+        text: "Du går tilbake mot parkeringshuset. Ved innkjørselen til skolen ser du to store frontlykter som nærmer seg til lyden av en motor.",
+        buttons: [["Løp inn i parkeringshuset!", "advanceTo(scenario.ThreeA)"],["Stå og vent ved rundkjøringen.", "advanceTo(scenario.ThreeB)"]]
+    },
+
+    four: {
+        text: "Det er helt mørkt, og du tar frem mobilen og skrur på lommelykt. "
+    }
+
+    };
+
 
     btnStart.onclick = function () {
-        innhold.innerHTML = "Vær hilset, " + brukernavn.value + "!";
-        brukernavn.parentNode.removeChild(brukernavn);
+        inpBrukernavn.parentNode.removeChild(inpBrukernavn);
         btnStart.parentNode.removeChild(btnStart);
-    }
+        velkommen.parentNode.removeChild(velkommen);
+        advanceTo(scenario.one);
+
+    };
 
 </script>
 </body>
