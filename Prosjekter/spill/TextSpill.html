@@ -17,16 +17,16 @@
             font-size: 30px;
         }
 
-        @keyframes fadeInn {
+        @keyframes fadeInn { /*liten animasjon som fader inn innhold*/
             from {opacity: 0}
             to {opacity: 1}
         }
 
         main {
             color: white;
-            -webkit-text-stroke: 0.5px dimgray;
-            animation: fadeInn 5s;
-            position: absolute;
+            -webkit-text-stroke: 0.5px dimgray; /*legger en grå ytterlinje på teksten*/
+            animation: fadeInn 5s; /*aktiverer animasjonen for main*/
+            position: absolute; /* denne og de tre neste linjene midtstiller hovedinnholdet*/
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
@@ -40,6 +40,10 @@
 
         #buttonBox {
             margin-top: 20px;
+            position: absolute;
+            display: grid;
+            grid-template-columns: 1fr auto;
+
         }
 
         button {
@@ -49,6 +53,7 @@
             border: dimgray 2px solid;
             font-family: sans-serif;
             font-size: 20px;
+            max-width: 200px;
         }
 
         #velkommen {
@@ -92,7 +97,7 @@
         brukernavn = inpBrukernavn.value
     };
 
-    let changeButtons = function (buttonList) { //Danner en knapp i div-et buttonBox for hvert svaralternativ jeg lager
+    let changeButtons = function (buttonList) { //Danner en knapp i div-et buttonBox for hvert svaralternativ jeg lager i objektene lenger ned i koden
         buttonBox.innerHTML = "";
         for (var i=0; i<buttonList.length; i++)
         {
@@ -110,10 +115,10 @@
         changeText(s.text)
     };
 
-    let scenario = { //et objekt som  inneholder alle mulige scenarioer og knapper
-    one: { //navnet på scenarioet
+    let scenario = { //et objekt som  inneholder alle mulige scenarioer og knapper, i form av flere objekter
+    one: { //navnet på scenario-objektet
         text: "Vær hilset, brukernavn! Her starter ditt eventyr!", //teksten som kommer opp
-        buttons: [["Begynn ditt eventyr", "advanceTo(scenario.two)"]] //alternativene man kan velge (og da knappene som dannes for dem), og hvilket scenario de sender deg til
+        buttons: [["Begynn ditt eventyr", "advanceTo(scenario.two)"]] // array med alternativene man kan velge (og da knappene som dannes for dem), og hvilket scenario de sender deg til
     },
 
     two: {
@@ -143,7 +148,7 @@
 
     ThreeAB: {
         text: "'ARE THOSE MINT?'",
-        buttons: [["Yes", "advanceTo(scenario.ThreeABA)"], ["No", "advanceTo(scenario.GameOver)"]]
+        buttons: [["Yes", "advanceTo(scenario.ThreeABA)"], ["No", "advanceTo(scenario.ThreeABB)"]]
     },
 
     ThreeABA: {
