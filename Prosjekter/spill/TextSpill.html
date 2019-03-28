@@ -80,7 +80,8 @@
 </main>
 
 <script>
-    let inpBrukernavn = document.querySelector("#inpBrukernavn"); //Refererer til HTML-elementene, så de kan brukes i JS
+    //Refererer til HTML-elementene, så de kan brukes i JS
+    let inpBrukernavn = document.querySelector("#inpBrukernavn");
 
     let brukernavn;
 
@@ -93,7 +94,7 @@
     let buttonBox = document.querySelector("#buttonBox");
 
 
-    inpBrukernavn.onkeyup = function () { //Endrer variabelen, brukernavn, sin verdi til det som blir skrevet inn i input-feltet
+    inpBrukernavn.onkeyup = function () { //Endrer variabelen "brukernavn" sin verdi til det som blir skrevet inn i input-feltet
         brukernavn = inpBrukernavn.value
     };
 
@@ -110,7 +111,7 @@
         text.innerHTML = words.replace("brukernavn",brukernavn);
     };
 
-    let advanceTo = function (s) { //definerer funksjonen som får spillet til å gå fra ett scenario til et annet, og da bytte ut knapper og tekst
+    let advanceTo = function (s) { //definerer funksjonen som får spillet til å gå fra ett scenario til et annet, og da bytter ut knapper og tekst
         changeButtons(s.buttons);
         changeText(s.text)
     };
