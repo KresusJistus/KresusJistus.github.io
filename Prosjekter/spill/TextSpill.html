@@ -144,6 +144,11 @@
         buttons: [["Gå etter", "advanceTo(scenario.ThreeBA)"], ["Stikk hjem...", "advanceTo(scenario.ThreeBB)"], ["Tilbake til skolen!", "advanceTo(scenario.four)"]],
     },
 
+    ThreeBA: {
+        text: "Du går inn, og finner fort ut at bilen ventet på deg. Den kjører sakte bort og ruller ned vinduet på førersiden. Han spør på engelsk med en mandig, russisk aksent: 'Do you have cigarette?'",
+        buttons: [["No", "advanceTo(scenario.ThreeAA)"], ["Yes", "advanceTo(scenario.ThreeAB)"]]
+    },
+
     ThreeBB : {
         text: "Eventyret er over, så kjedelig...",
         buttons: [["Jeg er dårlig i dette spillet", "advanceTo(scenario.one)"]]
