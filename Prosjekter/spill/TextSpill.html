@@ -100,7 +100,7 @@
 
     let scenario = { //et objekt som  inneholder alle mulige scenarioer og knapper
     one: { //første scenario
-        text: "Vær hilset, brukernavn!", //texten som kommer opp
+        text: "Vær hilset, brukernavn! Her starter ditt eventyr!", //texten som kommer opp
         buttons: [["Begynn ditt eventyr", "advanceTo(scenario.two)"]] //knappene man kan velge, og hvilket scenario de sender deg til
     },
 
@@ -114,6 +114,11 @@
         buttons: [["Løp inn i parkeringshuset!", "advanceTo(scenario.ThreeA)"],["Stå og vent ved rundkjøringen.", "advanceTo(scenario.ThreeB)"]]
     },
 
+    GameOver: {
+        text: "Du tapte...",
+        buttons: [["Prøv igjen!", "advanceTo(scenario.one)"],]
+    },
+
     ThreeA: {
         text: "Bilen kjører inn, opp til deg, og ruller ned vinduet på førersiden. Han spør på engelsk med en mandig, russisk aksent: 'Do you have cigarette?'",
         buttons: [["No", "advanceTo(scenario.ThreeAA)"], ["Yes", "advanceTo(scenario.ThreeAB)"]]
@@ -121,27 +126,27 @@
 
     ThreeAA: {
         text: "Han roper 'BAM!' idet han slår deg i ansiktet. Du dør. Game over.",
-        buttons: [["Jeg er dårlig i dette spillet", "advanceTo(scenario.one)"]]
+        buttons: [["Jeg er dårlig i dette spillet", "advanceTo(scenario.GameOver)"]]
     },
 
     ThreeAB: {
         text: "'ARE THOSE MINT?'",
-        buttons: [["Yes", "advanceTo(scenario.ThreeABA)"], ["No", "advanceTo(scenario.ThreeABB)"]]
+        buttons: [["Yes", "advanceTo(scenario.ThreeABA)"], ["No", "advanceTo(scenario.GameOver)"]]
     },
 
     ThreeABA: {
         text: "'WHAT, DO YOU THINK IM GAY? BAM!' Du dør.",
-        buttons: [["Jeg er dårlig i dette spillet", "advanceTo(scenario.one)"]]
+        buttons: [["Jeg er dårlig i dette spillet", "advanceTo(scenario.GameOver)"]]
     },
 
     ThreeABB: {
         text: "'BUT I LIKE MINT, DO YOU WANT TO SAY IM GAY? BAM!' Du dør.",
-        buttons: [["Jeg er dårlig i dette spillet.", "advanceTo(scenario.one)"]]
+        buttons: [["Jeg er dårlig i dette spillet.", "advanceTo(scenario.GameOver)"]]
     },
 
     ThreeB: {
         text: "Bilen forsvinner inn i parkeringshuset.",
-        buttons: [["Gå etter", "advanceTo(scenario.ThreeBA)"], ["Stikk hjem...", "advanceTo(scenario.ThreeBB)"], ["Tilbake til skolen!", "advanceTo(scenario.four)"]],
+        buttons: [["Gå etter", "advanceTo(scenario.ThreeBA)"], ["Stikk hjem...", "advanceTo(scenario.GameOver)"], ["Tilbake til skolen!", "advanceTo(scenario.four)"]],
     },
 
     ThreeBA: {
@@ -149,10 +154,6 @@
         buttons: [["No", "advanceTo(scenario.ThreeAA)"], ["Yes", "advanceTo(scenario.ThreeAB)"]]
     },
 
-    ThreeBB : {
-        text: "Eventyret er over, så kjedelig...",
-        buttons: [["Jeg er dårlig i dette spillet", "advanceTo(scenario.one)"]]
-    },
 
     four: {
         text: "Det er helt mørkt, og du tar frem mobilen og skrur på lommelykt. Det er ingen her så vidt du kan se.",
@@ -161,17 +162,17 @@
 
     FourA: {
         text: "Biblioteksdøren er lukket, men ikke låst. Du drar i døren og går inn. Fra enden av biblioteket hører du musikk. Du går nærmere og hører... Lillestrøm-supportermusikk? Kan det være...?",
-        buttons: [["Skru på delt internett på mobil...", "advanceTo(scenario.FourAA)"],["Løp til kantina likevel", "advanceTo(scenario.FourAB)"]]
+        buttons: [["Skru på delt internett på mobil...", "advanceTo(scenario.FourAA)"],["Løp til kantina likevel", "advanceTo(scenario.FourB)"]]
     },
 
     FourAA: {
         text: "Fra IT-avdelingen kommer det gående en mektig skygge, med lyset fra en mobil i ansiktet. Mistanken var rett, Gjørstein har senset internettdelingen og kommer for å ta deg i fusk!",
-        buttons: [["La Gjørstein konfrontere deg", "advanceTo(scenario.FourAAA)"],["Flykt fra skolen!", "advanceTo(scenario.one)"], ["Løp til kantina", "advanceTo(scenario.FourB)"]]
+        buttons: [["La Gjørstein konfrontere deg", "advanceTo(scenario.FourAAA)"],["Flykt fra skolen!", "advanceTo(scenario.GameOver)"], ["Løp til kantina", "advanceTo(scenario.FourB)"]]
     },
 
     FourAAA: {
         text: "Det er over nå. Gjørstein tar deg for fusk og du får IV i alle fag. I tillegg kastes du ut for å være på skolen etter stengetid.",
-        buttons: [["Jeg er dårlig i dette spillet.", "advanceTo(scenario.one)"]]
+        buttons: [["Jeg er dårlig i dette spillet.", "advanceTo(scenario.GameOver)"]]
     },
 
     FourB: {
@@ -181,12 +182,12 @@
 
     FourBA: {
         text: "Du går gjennom det tomme lærerværelset og beveger deg mot ledelsens kontorer. Ingen der inne heller.",
-        buttons: [["Prøv å hacke ledelsens PCer", "advanceTo(scenario.FourBAA)"], ["Gi opp og stikk hjem", "advanceTo(scenario.one)"], ["Gå tilbake til kantina.", "advanceTo(scenario.FourB"]]
+        buttons: [["Prøv å hacke ledelsens PCer", "advanceTo(scenario.FourBAA)"], ["Gi opp og stikk hjem", "advanceTo(scenario.GameOver)"], ["Gå tilbake til kantina.", "advanceTo(scenario.FourB)"]]
     },
 
     FourBAA: {
         text: "Hvordan skulle du, brukernavn, liksom fått til det..? Det tar for lang tid, og Gjørstein har tracket deg og den ekle, internettdelende telefonen din ned.",
-        buttons: [["LØP!", "advanceTo(scenario.one)"], ["Møt skjebnen...", "advanceTo(scenario.FourAAA)"]]
+        buttons: [["LØP!", "advanceTo(scenario.GameOver)"], ["Møt skjebnen...", "advanceTo(scenario.FourAAA)"]]
     },
 
 
@@ -197,12 +198,12 @@
 
     FourBBB: {
         text: "Dårlig idé! Du glemte å skru av internettdelingen! Idet du snur deg vekk fra matdisken, står allerede Gjørstein bak deg.",
-        buttons: [["LØP!", "advanceTo(scenario.one)"],["Møt skjebnen...", "advanceTo(scenario.FourAAA)"]]
+        buttons: [["LØP!", "advanceTo(scenario.GameOver)"],["Møt skjebnen...", "advanceTo(scenario.FourAAA)"]]
     },
 
     FourBBA: {
         text: "Hackingskills +100! Deilig rekebaguette!",
-        buttons: [["Gå opp vindeltrappen.", "advanceTo(scenario.FourBBAA)"], ["Dette blir for drøyt, stikk hjem.", "advanceTo(scenario.one)"]]
+        buttons: [["Gå opp vindeltrappen.", "advanceTo(scenario.FourBBAA)"], ["Dette blir for drøyt, stikk hjem.", "advanceTo(scenario.GameOver)"]]
     },
 
     FourBBAA: {
