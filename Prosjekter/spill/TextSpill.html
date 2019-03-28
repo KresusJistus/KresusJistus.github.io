@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TextSpill</title>
+    <title>TextAdventureSandvika</title>
 
 
     <style>
@@ -17,15 +17,10 @@
             font-size: 30px;
         }
 
-        @keyframes fadeInn { /*liten animasjon som fader inn innhold*/
-            from {opacity: 0}
-            to {opacity: 1}
-        }
 
         main {
             color: white;
             -webkit-text-stroke: 0.5px dimgray; /*legger en grå ytterlinje på teksten*/
-            animation: fadeInn 5s; /*aktiverer animasjonen for main*/
             position: absolute; /* denne og de tre neste linjene midtstiller hovedinnholdet*/
             top: 50%;
             left: 50%;
@@ -51,7 +46,7 @@
             margin-right: 20px;
             border-radius: 5%;
             border: dimgray 2px solid;
-            font-family: sans-serif;
+            font-family: "Berlin Sans FB", sans-serif;
             font-size: 20px;
             max-width: 200px;
         }
@@ -65,9 +60,9 @@
 </head>
 <body>
 
-<main>
+<main id="main">
 
-    <h1 id="velkommen">God dag, reisende. Vennligst skriv ditt navn.</h1>
+    <h1 id="velkommen">Velkommen til TextAdventures Sandvika Edition! Vennligst skriv ditt navn.</h1>
 
     <input type="text" id="inpBrukernavn">
 
@@ -93,6 +88,8 @@
 
     let buttonBox = document.querySelector("#buttonBox");
 
+    let main = document.querySelector("#main");
+
 
     inpBrukernavn.onkeyup = function () { //Endrer variabelen "brukernavn" sin verdi til det som blir skrevet inn i input-feltet
         brukernavn = inpBrukernavn.value
@@ -100,20 +97,35 @@
 
     let changeButtons = function (buttonList) { //Danner en knapp i div-et buttonBox for hvert svaralternativ jeg lager i objektene lenger ned i koden
         buttonBox.innerHTML = "";
-        for (var i=0; i<buttonList.length; i++)
+        for (let i=0; i<buttonList.length; i++)
         {
             buttonBox.innerHTML += "<button onClick=" + buttonList[i][1]+">" + buttonList[i][0]+"</button>";
 
         }
     };
 
-    let changeText = function (words) {  //bytter "brukernavn" i string til variabelen som ble lagret ved input
+    let changeText = function (words) {  //definerer en funksjon som kan bytte innholdet i text-divet, og bytter "brukernavn" i string til variabelen som ble lagret ved input
         text.innerHTML = words.replace("brukernavn",brukernavn);
     };
 
-    let advanceTo = function (s) { //definerer funksjonen som får spillet til å gå fra ett scenario til et annet, og da bytter ut knapper og tekst
+    let fadeCSS = [ //lager en animasjon for finere overganger mellom scenarioer. Fade-inn.
+        {
+            opacity:0
+        },
+        {
+            opacity:1
+        }
+    ];
+
+    let fadeEgenskaper = { //animasjonen varer i 3 sekunder...
+        duration:3000
+    };
+
+    let advanceTo = function (s) { //definerer funksjonen som får spillet til å gå fra ett scenario til et annet, og da bytter ut knapper og tekst. Aktiverer også fade-inn-animasjonen
         changeButtons(s.buttons);
-        changeText(s.text)
+        changeText(s.text);
+        main.animate(fadeCSS,fadeEgenskaper)
+
     };
 
     let scenario = { //et objekt som  inneholder alle mulige scenarioer og knapper, i form av flere objekter
@@ -236,7 +248,7 @@
     },
 
     FiveA: {
-        text: "Du forlater skolen med hodet hevet og samvittigheten i behold. Du vant spillet!",
+        text: "Du forlater skolen med hodet hevet og samvittigheten i behold. brukernavn vant spillet!",
         buttons: [["Spill igjen!", "advanceTo(scenario.one)"]]
     },
 
@@ -247,6 +259,7 @@
 
     };
 
+    main.animate(fadeCSS,fadeEgenskaper); //animasjonen settes i gang slik at velkomst-skjermen fades inn.
 
     btnStart.onclick = function () {  //onclick-funksjon som fjerner input-feltet, start-knappen og overskriften, og setter igang spillet på første scenario
         inpBrukernavn.parentNode.removeChild(inpBrukernavn);
