@@ -75,7 +75,7 @@
 </main>
 
 <script>
-    let inpBrukernavn = document.querySelector("#inpBrukernavn");
+    let inpBrukernavn = document.querySelector("#inpBrukernavn"); //Refererer til HTML-elementene, så de kan brukes i JS
 
     let brukernavn;
 
@@ -88,7 +88,7 @@
     let buttonBox = document.querySelector("#buttonBox");
 
 
-    inpBrukernavn.onkeyup = function () { //Lagrer brukernavnet som blir skrevet inn
+    inpBrukernavn.onkeyup = function () { //Endrer variabelen, brukernavn, sin verdi til det som blir skrevet inn i input-feltet
         brukernavn = inpBrukernavn.value
     };
 
@@ -105,15 +105,15 @@
         text.innerHTML = words.replace("brukernavn",brukernavn);
     };
 
-    let advanceTo = function (s) {
+    let advanceTo = function (s) { //definerer funksjonen som får spillet til å gå fra ett scenario til et annet
         changeButtons(s.buttons);
         changeText(s.text)
     };
 
     let scenario = { //et objekt som  inneholder alle mulige scenarioer og knapper
-    one: { //første scenario
-        text: "Vær hilset, brukernavn! Her starter ditt eventyr!", //texten som kommer opp
-        buttons: [["Begynn ditt eventyr", "advanceTo(scenario.two)"]] //knappene man kan velge, og hvilket scenario de sender deg til
+    one: { //navnet på scenarioet
+        text: "Vær hilset, brukernavn! Her starter ditt eventyr!", //teksten som kommer opp
+        buttons: [["Begynn ditt eventyr", "advanceTo(scenario.two)"]] //alternativene man kan velge (og da knappene som dannes for dem), og hvilket scenario de sender deg til
     },
 
     two: {
